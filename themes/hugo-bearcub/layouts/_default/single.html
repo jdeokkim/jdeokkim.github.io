@@ -17,6 +17,8 @@
   {{ end }}
 </p>
 {{ if not .Params.hideReply }}
+
+<!-- 
 {{ with .Site.Params.author.email }}
   <p>
     <a href='mailto:{{ . }}?subject={{ i18n "email-subject" }}"{{ default $.Site.Title $.Page.Title }}"'>
@@ -24,5 +26,16 @@
     </a>
   </p>
 {{ end }}
+-->
+
+<script src="https://utteranc.es/client.js"
+        repo="jdeokkim/jdeokkim.github.io"
+        issue-term="pathname"
+        label="utterances"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
 {{ end }}
 {{ end }}

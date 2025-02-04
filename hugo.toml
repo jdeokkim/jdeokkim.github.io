@@ -58,7 +58,7 @@ title = "Jae's Tech Tips"
 
   # Dates are displayed following the format below. For more information about
   # formatting, see https://gohugo.io/functions/format/
-  dateFormat = "2000-01-01"
+  dateFormat = "2006-01-02"
 
   # The path to your favicon.
   favicon = "images/favicon.png"
