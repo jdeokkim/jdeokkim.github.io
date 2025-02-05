@@ -3,6 +3,7 @@ title: "About"
 date: "2024-02-05T16:33:00+09:00"
 menu: "main"
 weight: 2
+hideReply: true
 ---
 
 <!-- 
@@ -32,6 +33,16 @@ Bachelor's Degree, Division of Computer Convergence
 
 **Soonchunhyang University** *(Feb 2019 – Feb 2023)*  
 Bachelor's Degree, Computer Software Engineering
+
+### Experience
+
+---
+
+**DGIST (Daegu Gyeongbuk Institute of Science and Technology)** *(Jun 2024 – Jul 2024)*  
+Research Intern @ [DGIST DataLab](https://datalab.dgist.ac.kr)
+
+**RTst** *(Jan 2024 – Feb 2024)*  
+Student Intern @ [Linux Team](https://www.rtst.co.kr/about)
 
 ### Projects
 
