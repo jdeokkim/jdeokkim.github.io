@@ -1,3 +1,5 @@
 <small>
-  {{ .Site.Copyright }}
+  <a href='mailto:{{ $.Site.Params.author.email }}' style="text-decoration:none;">
+    {{ .Site.Copyright }}
+  </a>
 </small>

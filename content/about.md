@@ -17,11 +17,15 @@ I hope you enjoy the posts on my blog and any feedback is always appreciated!
 
 ### Interests
 
+---
+
 - Game Physics
 - Computer Graphics
 - UNIX(-like) Operating Systems
 
 ### Education
+
+---
 
 **Chungnam National University** *(Feb 2023 – Present)*  
 Bachelor's Degree, Division of Computer Convergence
@@ -31,6 +35,8 @@ Bachelor's Degree, Computer Software Engineering
 
 ### Projects
 
+---
+
 - [**ferox:** A lightweight 2D physics engine written in C, for educational purposes](https://github.com/jdeokkim/ferox)
 - [**jebi:** A book (library) management software made with JavaFX and Cloud Firestore](https://github.com/jdeokkim/jebi)
 - [**jmprof:** A tiny, experimental heap profiler for GNU/Linux](https://github.com/jdeokkim/jmprof)
@@ -38,6 +44,8 @@ Bachelor's Degree, Computer Software Engineering
 - [**saerom:** A C99 Discord bot for Korean learning servers](https://github.com/jdeokkim/saerom)
 
 ### Honors & Awards
+
+---
 
 - Excellence Award, 2024 SW Talent Festival, Ministry of Science and ICT, 2024
 - Excellence Award, 2024 CNU Engineering Fair (Capstone Design Competition), Chungnam National University, 2024
