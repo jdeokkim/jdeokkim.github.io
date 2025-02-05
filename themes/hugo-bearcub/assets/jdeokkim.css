@@ -129,7 +129,7 @@ ol {
 }
 
 li {
-  margin-block-start: var(--spacing);
+  margin-block-start: calc(var(--spacing) * 0.25);
 }
 
 blockquote {

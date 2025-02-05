@@ -27,6 +27,7 @@ copyright = "Jaedeok Kim (CC BY 4.0)"
 enableRobotsTXT = true
 languageCode = 'en-US'
 theme = 'hugo-bearcub'
+timeZone = 'Asia/Seoul'
 title = "Jae's Tech Tips"
 
 # ============================================================================>
