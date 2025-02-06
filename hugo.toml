@@ -23,6 +23,7 @@
 # Basic Configurations =======================================================>
 
 baseURL = 'https://jdeokkim.github.io'
+capitalizeListTitles = false
 copyright = "Jaedeok Kim (CC BY 4.0)"
 enableRobotsTXT = true
 languageCode = 'en-US'

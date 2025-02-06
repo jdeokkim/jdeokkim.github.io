@@ -1,14 +1,14 @@
 [filtering-for]
-  other = "Filtering for"
+  other = "태그 검색:"
 
 [no-posts]
-  other = "No posts yet!"
+  other = "아직 작성된 게시물이 없습니다!"
 
 [email-subject]
-  other = "Reply to "
+  other = "댓글: "
 
 [email-reply]
-  other = "Reply to this post by email"
+  other = "이메일로 댓글 달기"
 
 [skip-link]
-  other = "Skip to main content"
+  other = "본문으로 바로 가기"
