@@ -11,9 +11,9 @@ tags: ["jdeokkim"]
     NOTE: https://gohugo.io/content-management/front-matter/ 
 -->
 
-Hi, my name is Jaedeok Kim! 
+Hi, my name is Jaedeok Kim!  
 
-I'm an undergraduate (senior) student at Chungnam National University (CNU) majoring in Computer Science and Engineering. My current interests are physically based simulations for video games (game physics), computer graphics, and UNIX-like operating systems.
+I'm an undergraduate (senior) student at Chungnam National University (CNU) majoring in Computer Science and Engineering. My current interests are physically based simulations for video games (game physics), computer graphics, and UNIX-like operating systems.  
 
 I hope you enjoy the posts on my blog and any feedback is always appreciated!
 
@@ -60,6 +60,7 @@ Student Intern @ [Linux Team](https://www.rtst.co.kr/about)
 ---
 
 - Excellence Award, 2024 SW Talent Festival, Ministry of Science and ICT, 2024
+- Excellence Award, 2024-2 CNU SW/AI Project Fair, Chungnam National University, 2024
 - Excellence Award, 2024 CNU Engineering Fair (Capstone Design Competition), Chungnam National University, 2024
 - Grand Award, 2024-1 CNU SW/AI Project Fair, Chungnam National University, 2024
 - ROKAF Chief of Staff Award, 2021 Military Open Source Software Hackathon, Open Source Academy for Military, 2021

@@ -60,6 +60,7 @@ Student Intern @ [Linux Team](https://www.rtst.co.kr/about)
 ---
 
 - Excellence Award, 2024 SW Talent Festival, Ministry of Science and ICT, 2024
+- Excellence Award, 2024-2 CNU SW/AI Project Fair, Chungnam National University, 2024
 - Excellence Award, 2024 CNU Engineering Fair (Capstone Design Competition), Chungnam National University, 2024
 - Grand Award, 2024-1 CNU SW/AI Project Fair, Chungnam National University, 2024
 - ROKAF Chief of Staff Award, 2021 Military Open Source Software Hackathon, Open Source Academy for Military, 2021
