@@ -70,6 +70,10 @@ title = "Jae's Tech Tips"
   # have the theme simply not show any link.
   hideUntranslated = false
 
+  # Enables mathematical rendering with MathJax. For more information, see
+  # https://gohugo.io/content-management/mathematics/
+  math = true
+
   # The name of the theme.
   themeStyle = "jdeokkim"
 
@@ -79,5 +83,19 @@ title = "Jae's Tech Tips"
   [params.author]
     name = "Jaedeok Kim"
     email = "jdeokkim@protonmail.com"
+
+# MarkUp Parameters ==========================================================>
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$']]
+          inline = [['\(', '\)']]
 
 # ============================================================================>
