@@ -243,13 +243,50 @@ B = \begin{bmatrix}
 $$
 
 $$
-AB_{11} = (1 \cdot 1) + (2 \cdot -1) + (3 \cdot 1) = 2
-AB_{12} = (1 \cdot -1) + (2 \cdot 1) + (3 \cdot -1) = -2
-AB_{21} = (3 \cdot 1) + (2 \cdot -1) + (1 \cdot 1) = 2
-AB_{22} = (3 \cdot -1) + (2 \cdot 1) + (1 \cdot -1) = -2
+AB_{11} = \begin{bmatrix}
+1 & 2 & 3
+\end{bmatrix} *
+\begin{bmatrix}
+1  \\
+-1 \\
+1  \\
+\end{bmatrix} = 2
 $$
 
-따라서, 
+$$
+AB_{12} = \begin{bmatrix}
+1 & 2 & 3
+\end{bmatrix} *
+\begin{bmatrix}
+-1  \\
+1 \\
+-1  \\
+\end{bmatrix} = -2
+$$
+
+$$
+AB_{21} = \begin{bmatrix}
+3 & 2 & 1
+\end{bmatrix} *
+\begin{bmatrix}
+1  \\
+-1 \\
+1  \\
+\end{bmatrix} = 2
+$$
+
+$$
+AB_{22} = \begin{bmatrix}
+3 & 2 & 1
+\end{bmatrix} *
+\begin{bmatrix}
+-1  \\
+1 \\
+-1  \\
+\end{bmatrix} = -2
+$$
+
+따라서 \(AB\)는 다음과 같은 \(2 \times 2\) 행렬이다.
 
 $$
 AB = \begin{bmatrix} 
@@ -257,6 +294,41 @@ AB = \begin{bmatrix}
 2 & -2
 \end{bmatrix}
 $$
+
+행렬 곱셈에서는 행렬의 덧셈 및 뺄셈과 마찬가지로 결합 (associative law) 및 분배 법칙 (distributive law)이 성립하지만, **교환 법칙 (commutative law)은 성립하지 않는다.**
+
+> 1. \(AB \ne BA\)
+> 2. \(A(BC) = (AB)C\)
+> 3. \(A(B + C) = AB + AC\)
+> 4. \((A + B)C = AC + BC\)
+
+### 블록 행렬
+
+아래와 같은 \(2 \times 2\) 행렬 \(A\)와 \(4 \times 4\) 행렬 \(B\)가 있다고 하자. 
+
+$$
+A = \begin{bmatrix}
+  1 & 2 \\
+  2 & 1
+\end{bmatrix},
+B = \begin{bmatrix}
+  1 & 2 & 1 & 2 \\
+  2 & 1 & 2 & 1 \\
+  1 & 2 & 1 & 2 \\
+  2 & 1 & 2 & 1
+\end{bmatrix}
+$$
+
+\(B\)를 \(2 \times 2\)의 행렬 단위로 나누면 \(A\)로 표현할 수 있는데, 이때 \(A\)를 블록 행렬 (block matrix)이라고 한다.
+
+$$
+B = \begin{bmatrix}
+  A & A \\
+  A & A
+\end{bmatrix}
+$$
+
+행렬을 그 행렬보다 더 작은 행렬 단위인 블록으로 나누어 표현하는 방법은 크기가 큰 행렬을 다룰 때 유용하게 사용할 수 있다.
 
 ---
 
