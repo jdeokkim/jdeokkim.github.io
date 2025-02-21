@@ -91,7 +91,7 @@ $$
 
 가 성립한다.
 
-### 코시–슈바르츠 부등식
+### Cauchy–Schwarz 부등식
 
 \(| cos \ \theta | \le 1\)이므로, \(v \cdot w\)를 통해 코시–슈바르츠 부등식 (Cauchy–Schwarz–Buniakowsky inequality)을 유도할 수 있다.
 
@@ -211,6 +211,29 @@ c & 2c \\
 0 & c \\
 \end{bmatrix}
 $$
+
+### 전치 행렬
+
+주대각선을 기준으로 행렬 \(A\)의 행과 열을 교환하여 (~~주대각선을 기준으로 종이를 접듯이 행렬을 뒤집어서~~) 만들어지는 행렬을 \(A\)의 전치 행렬 (transpose)라고 한다.
+
+$$
+A = \begin{bmatrix}
+0 & 1 & 2 \\
+3 & 2 & 1 \\
+\end{bmatrix},
+A^T = \begin{bmatrix}
+0 & 3 \\
+1 & 2 \\
+2 & 1 \\
+\end{bmatrix}
+$$
+
+행렬 \(A\)와 \(B\)의 전치 행렬에 대한 성질은 다음과 같다.
+
+> 1. \((cA)^T = cA^T\)
+> 2. \((A^T)^T = A\)
+> 3. \((A + B)^T = A^T + B^T\)
+> 4. \((AB)^T = B^T A^T\)
 
 ### 행렬의 대각합
 
