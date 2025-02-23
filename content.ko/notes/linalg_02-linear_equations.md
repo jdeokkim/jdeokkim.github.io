@@ -6,7 +6,7 @@ math: true
 tags: ["linear-algebra", "linalg", "numpy"]
 ---
 
-## 연립 일차 방정식
+### 행의 관점과 열의 관점
 
 연립 일차 방정식은 행의 관점 (row picture)와 열의 관점 (column picture), 두 개의 관점으로 바라볼 수 있다.
 
@@ -87,6 +87,11 @@ $$
         3x + 2y = 12 \\
         x - 2y = -4
     \end{cases}
+\end{equation}
+$$
+
+$$
+\begin{equation}
 \rightarrow
     \begin{cases}
         3x + 2y = 12 \\
@@ -172,13 +177,301 @@ $$
 > 3. \((AB)^{-1} = B^{-1}A^{-1}\)
 > 4. \((A^{T})^{-1} = (A^{-1})^T\)
 
-### 기본 행 연산
+### 기본 행렬
 
-(추가 예정)
+단위 행렬 (identity matrix) \(I\)에 아래 연산 중 단 하나만을 수행하여 만들어지는 행렬을 기본 행렬 (elementary matrix)이라 하며, 기본 행렬을 만들기 위해 수행한 연산을 기본 행 연산 (elementary row operation)이라고 한다.
+
+> 1. \(i\)번째 행에 \(j\)번째 행의 \(k\)배만큼을 더한다.
+
+$$
+E_{23}(k) = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & k \\
+    0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+E_{23}(k) \begin{bmatrix}
+    1 \\
+    2 \\
+    3
+\end{bmatrix} =
+\begin{bmatrix}
+    1 \\
+    2 + 3k \\
+    3
+\end{bmatrix}
+$$
+
+> 2. \(i\)번째 행을 \(k\)배로 만든다.
+
+$$
+E_{3}(k) = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & k \\
+\end{bmatrix}
+$$
+
+$$
+E_{3}(k) \begin{bmatrix}
+    1 \\
+    2 \\
+    3
+\end{bmatrix} =
+\begin{bmatrix}
+    1 \\
+    2 \\
+    3k
+\end{bmatrix}
+$$
+
+> 3. \(i\)번째 행과 \(j\)번째 행을 서로 교환한다.
+
+$$
+E_{23} = \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 0 & 1 \\
+    0 & 1 & 0 \\
+\end{bmatrix}
+$$
+
+$$
+E_{23} \begin{bmatrix}
+    1 \\
+    2 \\
+    3
+\end{bmatrix} =
+\begin{bmatrix}
+    1 \\
+    3 \\
+    2
+\end{bmatrix}
+$$
+
+### 첨가 행렬
+
+연립 일차 방정식 \(Ax = b\)에서 행렬 \(A\)의 오른쪽에 새로운 열 \(b\)를 추가하여 만들어지는 행렬을 첨가 행렬 (augmented matrix)라고 한다.
+
+$$
+A = \begin{bmatrix}
+    2 & 1 & 1 \\
+    1 & 2 & 1 \\
+    1 & 1 & 2 \\
+\end{bmatrix}, 
+b = \begin{bmatrix}
+    8 \\
+    6 \\
+    2 \\
+\end{bmatrix}
+$$
+
+$$
+[A \ b] = \begin{bmatrix}
+    2 & 1 & 1 & | & 8 \\
+    1 & 2 & 1 & | & 6 \\
+    1 & 1 & 2 & | & 2 \\
+\end{bmatrix}
+$$
 
 ### Gauss–Jordan 소거법
 
-(추가 예정)
+연립 일차 방정식 \(Ax = b\)의 해 \(x = A^{-1}b\)를 구하기 위해서는 \(A^{-1}\)이 필요하다. 
+
+Gauss–Jordan 소거법 (Gauss–Jordan elimination)의 핵심은 첨가 행렬 \([A \ I]\)에 기본 행 연산을 적용하여 \([I \ A^{-1}]\) 형태로 만드는 것이다.
+
+예를 들면, \(A\)와 \(b\)가 아래와 같을 때,
+
+$$
+A = \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 2 & 2 \\
+    1 & 2 & 3 \\
+\end{bmatrix},
+b = \begin{bmatrix}
+    3 \\
+    5 \\
+    6 \\
+\end{bmatrix}
+$$
+
+먼저 \([A \ I]\)에 기본 행 연산을 수행하여 (\(A\)에 수행한 연산을 \(I\) 에도 똑같이 수행!) \(A\)를 상삼각 행렬 \(U\) 형태로 만든다. 여기까지의 과정을 Gauss 소거법 (Gaussian elimination)이라고 한다.
+
+$$
+[A \ I] = \begin{bmatrix}
+    1 & 1 & 1 & | & 1 & 0 & 0 \\
+    1 & 2 & 2 & | & 0 & 1 & 0 \\
+    1 & 2 & 3 & | & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 1 & 1 & | & 1 & 0 & 0 \\
+    0 & 1 & 1 & | & -1 & 1 & 0 \\
+    1 & 2 & 3 & | & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 1 & 1 & | & 1 & 0 & 0 \\
+    0 & 1 & 1 & | & -1 & 1 & 0 \\
+    0 & 1 & 2 & | & -1 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 1 & 1 & | & 1 & 0 & 0 \\
+    0 & 1 & 1 & | & -1 & 1 & 0 \\
+    0 & 0 & 1 & | & 0 & -1 & 1 \\
+\end{bmatrix}
+$$
+
+Gauss–Jordan 소거법에서는 \(U\)를 기약 행사다리꼴 (reduced row echelon form, RREF) 형태를 거쳐 \(I\)로 만드는 과정을 추가적으로 수행한다.
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 & | & 2 & -1 & 0 \\
+    0 & 1 & 1 & | & -1 & 1 & 0 \\
+    0 & 0 & 1 & | & 0 & -1 & 1 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 & | & 2 & -1 & 0 \\
+    0 & 1 & 0 & | & -1 & 2 & -1 \\
+    0 & 0 & 1 & | & 0 & -1 & 1 \\
+\end{bmatrix} = [I \ A^{-1}]
+$$
+
+따라서 \(Ax = b\)의 해 \(x = A^{-1}b\)는
+
+$$
+A^{-1}b = \begin{bmatrix}
+    2 & -1 & 0 \\
+    -1 & 2 & -1 \\
+    0 & -1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    3 \\
+    5 \\
+    6 \\
+\end{bmatrix}
+= \begin{bmatrix}
+    1 \\
+    1 \\
+    1 \\
+\end{bmatrix}
+$$
+
+즉, \(x = y = z = 1\)이다.
+
+### \(LU\) 분해 (\(A = LU\))
+
+\(LU\) 분해 (\(LU\) decomposition)이란 가역 행렬 \(A\)를 상삼각 행렬과 하삼각 행렬 (lower triangular matrix)의 곱 \(LU\)로 분해하는 과정을 뜻하며, Gauss 소거법을 첨가 행렬 없이 행렬의 곱으로만 나타낸 것이다.
+
+\(A\)를 \(LU\) 분해하기 위해서는 \(A = IA\)에서부터 시작해 \(A\)에 기본 행 연산을 수행할 때마다 그 연산에 대응하는 기본 행렬의 역행렬을 \(I\)에 곱해주는 과정을 \(A = LU\) 형태가 될 때까지 반복하면 된다.
+
+$$
+A = IA = 
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & 2 & 2 \\
+    1 & 2 & 3 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    0 & 1 & 1 \\
+    1 & 2 & 3 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    1 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    0 & 1 & 1 \\
+    0 & 1 & 2 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    1 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    0 & 1 & 1 \\
+    0 & 1 & 2 \\
+\end{bmatrix}
+$$
+
+$$
+\rightarrow \begin{bmatrix}
+    1 & 0 & 0 \\
+    1 & 1 & 0 \\
+    1 & 1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 1 & 1 \\
+    0 & 1 & 1 \\
+    0 & 0 & 1 \\
+\end{bmatrix} = LU
+$$
+
+\(LU\) 분해는 \(Ax = b\)의 해를 수치 해석 (numerical analysis)적으로 계산할 때 자주 사용되며, 그 과정은 다음과 같다.
+
+> 1. **분해 (factor):** \(A\)를 \(A = LU\)로 분해하면 \(Ax = LUx = b\)가 되는데, 이때 \(Ux = c\)라고 하자.
+> 2. **계산 (solve):** \(Lc = b\)를 먼저 계산하고, 그 다음에 \(Ux = c\)를 계산하여 \(x\)를 찾는다.
+
+### \(A = LDU\)
+
+\(U\)의 주대각 성분, 즉 피봇 중에 \(1\)이 아닌 것이 존재할 경우에는 \(U\)를 대각 행렬 \(D\)와 또다른 상삼각 행렬 \(U\)의 곱인 \(DU\)로 나타낼 수 있다.
+
+$$
+U = IU = \begin{bmatrix}
+    1 & 0 \\
+    0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    2 & 8 \\
+    0 & 5 \\
+\end{bmatrix}
+$$
+
+$$
+= \begin{bmatrix}
+    2 & 0 \\
+    0 & 5 \\
+\end{bmatrix}
+\begin{bmatrix}
+    1 & 4 \\
+    0 & 1 \\
+\end{bmatrix} = DU
+$$
 
 ---
 
