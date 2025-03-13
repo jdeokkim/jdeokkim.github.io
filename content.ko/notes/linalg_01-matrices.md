@@ -356,6 +356,6 @@ $$
 
 ---
 
-## 참고 문헌
+### 참고 문헌
 
 - [G. Strang, “Introduction to Linear Algebra,” 5th ed. Wellesley-Cambridge Press, 2016.](https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html)
