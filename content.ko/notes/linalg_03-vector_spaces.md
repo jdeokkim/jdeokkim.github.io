@@ -1,6 +1,6 @@
 ---
 title: "선형 대수: 벡터 공간"
-date: "2024-02-23T23:54:00+09:00"
+date: "2025-02-23T23:54:00+09:00"
 hideReply: true
 math: true
 tags: ["linear-algebra", "linalg", "numpy"]
