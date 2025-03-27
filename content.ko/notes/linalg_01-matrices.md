@@ -1,5 +1,5 @@
 ---
-title: "벡터와 행렬"
+title: "선형 대수: 벡터와 행렬"
 date: "2024-02-16T21:56:00+09:00"
 hideReply: true
 math: true

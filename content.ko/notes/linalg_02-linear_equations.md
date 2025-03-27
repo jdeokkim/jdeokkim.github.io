@@ -1,5 +1,5 @@
 ---
-title: "연립 일차 방정식"
+title: "선형 대수: 연립 일차 방정식"
 date: "2024-02-17T23:43:00+09:00"
 hideReply: true
 math: true
