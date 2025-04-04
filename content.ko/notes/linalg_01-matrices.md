@@ -1,14 +1,14 @@
 ---
 title: "선형 대수: 벡터와 행렬"
-date: "2024-02-16T21:56:00+09:00"
+date: "2025-02-16T21:56:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg", "numpy"]
+tags: ["linear-algebra", "linalg"]
 ---
 
 ### 벡터의 정의
 
-벡터는 영 벡터 (zero vector), 두 벡터 사이의 덧셈, 그리고 벡터에 대한 스칼라 곱셈 (scalar multiplication) 연산이 정의된, 벡터 공간 (vector space)의 원소를 뜻하며, \( n \)개의 수로 이루어진 \( n \)차원의 벡터는 아래와 같이 하나의 열 (column)로 나타낼 수 있다.
+> 벡터는 영 벡터 (zero vector), 두 벡터 사이의 덧셈, 그리고 벡터에 대한 스칼라 곱셈 (scalar multiplication) 연산이 정의된, 벡터 공간 (vector space)의 원소를 뜻하며, \(n\)개의 수로 이루어진 \(n\)차원의 벡터는 하나의 열 (column)로도 나타낼 수 있다.
 
 $$
 \mathbfit{v} = 
@@ -40,7 +40,7 @@ $$
 
 ### 벡터의 기본 연산
 
-벡터의 기본 연산에는 두 벡터 사이의 덧셈과 벡터에 대한 스칼라 곱셈이 있다.
+> 벡터의 기본 연산에는 두 벡터 사이의 덧셈과 벡터에 대한 스칼라 곱셈이 있다.
 
 $$
 \mathbfit{v + w} = 
@@ -57,17 +57,19 @@ $$
 
 ### 선형 결합
 
-모든 벡터는 \(cv + dw\) 형태의 선형 결합 (linear combination)으로 나타낼 수 있으며, 특히 3차원 공간에서는 \(cu + dv + ew\) 형태의 선형 결합이 원점 (origin)을 지나는 선, 면 또는 공간이 된다. 
+> 모든 벡터는 \(cv + dw\) 형태의 선형 결합 (linear combination)으로 나타낼 수 있다.
+
+특히 3차원 공간에서는 \(cu + dv + ew\) 형태의 선형 결합이 원점 (origin)을 지나는 선, 면 또는 공간이 된다. 
 
 ### 벡터의 내적
 
-두 벡터 \(v\)와 \(w\)의 내적 (dot product, inner product) \(v \cdot w\)는 아래와 같이 정의된다.
+> 두 벡터 \(v\)와 \(w\)의 내적 (dot product, inner product) \(v \cdot w\)는 아래와 같이 정의된다.
 
 $$
 v \cdot w = w \cdot v = v_1 w_1 + v_2 w_2
 $$
 
-또한, 벡터 \(v\)의 길이 (length) \(||v||\)는 \(v \cdot v\)의 제곱근 (square root)으로 정의된다.
+> 또한, 벡터 \(v\)의 길이 (length) \(||v||\)는 \(v \cdot v\)의 제곱근 (square root)으로 정의된다.
 
 $$
 ||v|| = \sqrt{v \cdot v} = \sqrt{{v_1}^2 + {v_2}^2 + \dots}
@@ -158,7 +160,7 @@ $$
 
 ### 단위 행렬과 영 행렬
 
-행렬의 성분 중에서 \(i = j\)인 \(a_{ij}\)를 주대각 성분 (main diagonal entry)이라고 한다.
+> 행렬의 성분 중에서 \(i = j\)인 \(a_{ij}\)를 주대각 성분 (main diagonal entry)이라고 한다.
 
 단위 행렬 (identity matrix)은 아래와 같이 주대각 성분이 \(1\)이고 나머지 성분이 모두 \(0\)인 행렬을 가리키며,
 
@@ -171,7 +173,7 @@ I =
 \end{bmatrix}
 $$
 
-모든 성분이 \(0\)인 행렬은 영 행렬 (zero matrix, null matrix)이라고 한다.
+> 모든 성분이 \(0\)인 행렬은 영 행렬 (zero matrix, null matrix)이라고 한다.
 
 $$
 O = 
@@ -214,7 +216,7 @@ $$
 
 ### 전치 행렬
 
-주대각선을 기준으로 행렬 \(A\)의 행과 열을 교환하여 (~~주대각선을 기준으로 종이를 접듯이 행렬을 뒤집어서~~) 만들어지는 행렬을 \(A\)의 전치 행렬 (transpose)라고 한다.
+> 주대각선을 기준으로 행렬 \(A\)의 행과 열을 교환하여 (~~주대각선을 기준으로 종이를 접듯이 행렬을 뒤집어서~~) 만들어지는 행렬을 \(A\)의 전치 행렬 (transpose)라고 한다.
 
 $$
 A = \begin{bmatrix}
@@ -237,7 +239,7 @@ $$
 
 ### 행렬의 대각합
 
-행렬 \(A\)의 대각합 (trace) \(tr(A)\)은 \(A\)의 모든 주대각 성분의 합을 뜻한다.
+> 행렬 \(A\)의 대각합 (trace) \(tr(A)\)은 \(A\)의 모든 주대각 성분의 합을 뜻한다.
 
 $$
 tr(A) = \sum_{k=1}^{n}{a_{kk}} = 1 + 1 = 2
@@ -245,7 +247,7 @@ $$
 
 ### 행렬 곱셈
 
-\(m \times n\) 행렬 \(A\)와 \(n \times p\) 행렬 \(B\)의 곱 \(AB\)은 \(m \times p\) 행렬이 되는데, \(AB\)의 각 성분은 \(A\)의 각 행의 성분과 \(B\)의 각 열의 성분을 내적하여 구할 수 있다. (단, \(1 \le i \le m, \ 1 \le j \le p\))
+> \(m \times n\) 행렬 \(A\)와 \(n \times p\) 행렬 \(B\)의 곱 \(AB\)은 \(m \times p\) 행렬이 되는데, \(AB\)의 각 성분은 \(A\)의 각 행의 성분과 \(B\)의 각 열의 성분을 내적하여 구할 수 있다. (단, \(1 \le i \le m, \ 1 \le j \le p\))
 
 $$
 AB = [c_{ij}]_{m \times p} \ \text{where} \ c_{ij} = a_{i1} b_{1j} + a_{i2} b_{2j} + \dots + a_{ip} b_{pj} = \sum_{k=1}^{p}{a_{ik}b_{kj}}
@@ -318,7 +320,7 @@ AB = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-행렬 곱셈에서는 행렬의 덧셈 및 뺄셈과 마찬가지로 결합 (associative law) 및 분배 법칙 (distributive law)이 성립하지만, **교환 법칙 (commutative law)은 성립하지 않는다.**
+> 행렬 곱셈에서는 행렬의 덧셈 및 뺄셈과 마찬가지로 결합 (associative law) 및 분배 법칙 (distributive law)이 성립하지만, **교환 법칙 (commutative law)은 성립하지 않는다.**
 
 > 1. \(AB \ne BA\)
 > 2. \(A(BC) = (AB)C\)
@@ -358,4 +360,4 @@ $$
 
 ### 참고 문헌
 
-- [G. Strang, "Introduction to Linear Algebra," 5th ed. Wellesley-Cambridge Press, 2016.](https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html)
+- [G. Strang, "Introduction to Linear Algebra," 5th ed. Wellesley-Cambridge Press, Wellesley, MA, 2016.](https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html)

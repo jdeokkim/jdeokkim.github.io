@@ -1,9 +1,9 @@
 ---
 title: "선형 대수: 연립 일차 방정식"
-date: "2024-02-17T23:43:00+09:00"
+date: "2025-02-17T23:43:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg", "numpy"]
+tags: ["linear-algebra", "linalg"]
 ---
 
 ### 행의 관점과 열의 관점
@@ -118,7 +118,7 @@ $$
 
 ### 계수 행렬을 이용한 소거법
 
-연립 일차 방정식의 계수 행렬 중, 다른 미지수의 소거를 담당하는 0이 아닌 성분을 피봇 (pivot)이라고 한다.
+> 연립 일차 방정식의 계수 행렬 중, 다른 미지수의 소거를 담당하는 0이 아닌 성분을 피봇 (pivot)이라고 한다.
 
 예를 들면, 아래와 같은 형태의 계수 행렬에서 피봇은 \(a_{11}\), \(a_{22}\), \(a_{33}\), 그리고 \(a_{44}\)이다.
 
@@ -133,10 +133,10 @@ $$
 
 \(n\)개의 미지수를 가진 연립 일차 방정식의 해를 찾기 위해서는 총 \(n\)개의 피봇이 필요한데, 계수 행렬을 통해 피봇을 찾는 방법은 다음과 같다. 
 
-1. 첫 번째 미지수의 계수를 피봇으로 간주하고, 이 성분이 속한 열의 다른 모든 성분을 0으로 만든다.
-2. 두 번째 미지수의 계수를 피봇으로 간주하고, 이 성분이 속한 열의 다른 모든 성분을 0으로 만든다.
-3. 이 과정을 총 \(n\)번 반복하여 \(n\)개의 피봇을 찾고, 계수 행렬이 상삼각 행렬 형태가 되도록 한다.
-4. 후방 대입법을 통해 각 미지수의 값을 찾고, 연립 일차 방정식의 해를 구한다.
+> 1. 첫 번째 미지수의 계수를 피봇으로 간주하고, 이 성분이 속한 열의 다른 모든 성분을 0으로 만든다.
+> 2. 두 번째 미지수의 계수를 피봇으로 간주하고, 이 성분이 속한 열의 다른 모든 성분을 0으로 만든다.
+> 3. 이 과정을 총 \(n\)번 반복하여 \(n\)개의 피봇을 찾고, 계수 행렬이 상삼각 행렬 형태가 되도록 한다.
+> 4. 후방 대입법을 통해 각 미지수의 값을 찾고, 연립 일차 방정식의 해를 구한다.
 
 $$
 \begin{bmatrix}
@@ -158,15 +158,15 @@ $$
 
 ### 역행렬
 
-정사각 행렬 (square matrix) \(A\)의 곱셈의 역원 (multiplicative **inverse**, reciprocal)이 되는, 즉 \(AB = BA = I\)를 만족하는 단 하나의 행렬 \(B\)가 존재할 때 \(A\)를 가역행렬 (invertible matrix, non-singular matrix)이라고 한다. 또한, \(B\)를 \(A\)의 역행렬 (inverse matrix)라 하며 \(A^{-1}\)과 같이 나타낸다.
+> 정사각 행렬 (square matrix) \(A\)의 곱셈의 역원 (multiplicative **inverse**, reciprocal)이 되는, 즉 \(AB = BA = I\)를 만족하는 단 하나의 행렬 \(B\)가 존재할 때 \(A\)를 가역행렬 (invertible matrix, non-singular matrix)이라고 한다. 또한, \(B\)를 \(A\)의 역행렬 (inverse matrix)라 하며 \(A^{-1}\)과 같이 나타낸다.
 
 \(A\)의 역행렬이 존재하지 않을 경우, \(A\)를 비가역행렬 (non-invertible matrix, singular matrix)라고 한다.
 
 \(n \times n\) 행렬 \(A\)의 역행렬이 존재하기 위한 필요충분조건은 다음과 같다. (단, \(n > 0\))
 
-1. \(A\)의 피봇 개수가 \(n\)개이다.
-2. \(Ax = 0\)의 해는 \(x = 0\) 단 하나이다.
-3. \(Ax = b\)의 해는 \(x = A^{-1}b\) 단 하나이다.
+> 1. \(A\)의 피봇 개수가 \(n\)개이다.
+> 2. \(Ax = 0\)의 해는 \(x = 0\) 단 하나이다.
+> 3. \(Ax = b\)의 해는 \(x = A^{-1}b\) 단 하나이다.
 
 (추가 예정)
 
@@ -177,9 +177,9 @@ $$
 > 3. \((AB)^{-1} = B^{-1}A^{-1}\)
 > 4. \((A^{T})^{-1} = (A^{-1})^T\)
 
-### 기본 행렬
+### 기본 행 연산
 
-단위 행렬 (identity matrix) \(I\)에 아래 연산 중 단 하나만을 수행하여 만들어지는 행렬을 기본 행렬 (elementary matrix)이라 하며, 기본 행렬을 만들기 위해 수행한 연산을 기본 행 연산 (elementary row operation)이라고 한다.
+단위 행렬 \(I\)에 아래 연산 중 단 하나만을 수행하여 만들어지는 행렬을 기본 행렬 (elementary matrix)이라 하며, 기본 행렬을 만들기 위해 수행한 연산을 기본 행 연산 (elementary row operation)이라고 한다.
 
 > 1. \(i\)번째 행에 \(j\)번째 행의 \(k\)배만큼을 더한다.
 
@@ -207,7 +207,7 @@ $$
 > 2. \(i\)번째 행을 \(k\)배로 만든다.
 
 $$
-E_{3}(k) = \begin{bmatrix}
+E_{33}(k) = \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
     0 & 0 & k \\
@@ -215,7 +215,7 @@ E_{3}(k) = \begin{bmatrix}
 $$
 
 $$
-E_{3}(k) \begin{bmatrix}
+E_{33}(k) \begin{bmatrix}
     1 \\
     2 \\
     3
@@ -230,7 +230,7 @@ $$
 > 3. \(i\)번째 행과 \(j\)번째 행을 서로 교환한다.
 
 $$
-E_{23} = \begin{bmatrix}
+P_{23} = \begin{bmatrix}
     1 & 0 & 0 \\
     0 & 0 & 1 \\
     0 & 1 & 0 \\
@@ -238,7 +238,7 @@ E_{23} = \begin{bmatrix}
 $$
 
 $$
-E_{23} \begin{bmatrix}
+P_{23} \begin{bmatrix}
     1 \\
     2 \\
     3
@@ -250,9 +250,13 @@ E_{23} \begin{bmatrix}
 \end{bmatrix}
 $$
 
+### 치환 행렬
+
+> 단위 행렬 \(I\)에 기본 행 연산의 세 번째 규칙을 적용해 만들어지는 기본 행렬 \(P_{ij}\)를 행 교환 행렬 (row exchange matrix) 또는 치환 행렬 (permutation matrix)이라고 한다.
+
 ### 첨가 행렬
 
-연립 일차 방정식 \(Ax = b\)에서 행렬 \(A\)의 오른쪽에 새로운 열 \(b\)를 추가하여 만들어지는 행렬을 첨가 행렬 (augmented matrix)라고 한다.
+> 연립 일차 방정식 \(Ax = b\)에서 행렬 \(A\)의 오른쪽에 새로운 열 \(b\)를 추가하여 만들어지는 행렬을 첨가 행렬 (augmented matrix)라고 한다.
 
 $$
 A = \begin{bmatrix}
@@ -372,7 +376,7 @@ $$
 
 ### \(LU\) 분해 (\(A = LU\))
 
-\(LU\) 분해 (\(LU\) decomposition)이란 가역 행렬 \(A\)를 상삼각 행렬과 하삼각 행렬 (lower triangular matrix)의 곱 \(LU\)로 분해하는 과정을 뜻하며, Gauss 소거법을 첨가 행렬 없이 행렬의 곱으로만 나타낸 것이다.
+> \(LU\) 분해 (\(LU\) decomposition)이란 가역 행렬 \(A\)를 상삼각 행렬과 하삼각 행렬 (lower triangular matrix)의 곱 \(LU\)로 분해하는 과정을 뜻하며, Gauss 소거법을 첨가 행렬 없이 행렬의 곱으로만 나타낸 것이다.
 
 \(A\)를 \(LU\) 분해하기 위해서는 \(A = IA\)에서부터 시작해 \(A\)에 기본 행 연산을 수행할 때마다 그 연산에 대응하는 기본 행렬의 역행렬을 \(I\)에 곱해주는 과정을 \(A = LU\) 형태가 될 때까지 반복하면 된다.
 
@@ -477,4 +481,4 @@ $$
 
 ### 참고 문헌
 
-- [G. Strang, "Introduction to Linear Algebra," 5th ed. Wellesley-Cambridge Press, 2016.](https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html)
+- [G. Strang, "Introduction to Linear Algebra," 5th ed. Wellesley-Cambridge Press, Wellesley, MA, 2016.](https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html)
