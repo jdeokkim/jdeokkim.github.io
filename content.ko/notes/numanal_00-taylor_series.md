@@ -1,6 +1,6 @@
 ---
 title: "수치 해석: 테일러 정리"
-date: "2025-04-05T00:49:00+09:00"
+date: "2025-04-04T22:49:00+09:00"
 hideReply: true
 math: true
 tags: ["calculus", "numanal", "numerical-analysis", "taylor-series"]
