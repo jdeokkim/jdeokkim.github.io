@@ -30,6 +30,8 @@ tags: ["calculus", "multivariable-calculus", "numanal", "numerical-analysis"]
 
 예를 들면, 선분, 다각형, 원 등은 유계 영역이지만 직선, 평면, 좌표축이나 무한 구간에서 정의된 함수의 그래프는 유계 영역이 아니다.
 
+---
+
 ### 극한과 연속
 
 \(2\)-변수 함수의 극한을 이해할 때 주의할 점은, 독립 변수가 단 하나인 \(1\)-변수 함수에서의 극한의 정의와 달리 **\((x, y)\)가 주어진 점에 접근할 때 왼쪽 방향과 오른쪽 방향 외에도 모든 방향에서 접근할 수 있다는 것이다.** 이 부분을 제외한 나머지 내용은 \(1\)-변수 함수에 대한 엡실론-델타 논법 (epsilon-delta argument)과 동일하다.
@@ -39,7 +41,11 @@ tags: ["calculus", "multivariable-calculus", "numanal", "numerical-analysis"]
 > **엡실론-델타 논법 (\(2\)-변수 함수):** 함수 \(f\)에 정의역에 속하는 임의의 점 \((x, y)\)와 실수 \(\epsilon \ (\epsilon > 0)\)에 대하여, 아래 조건을 만족하는 \(\delta \ (\delta > 0)\)이 존재한다면 \((x, y)\)가 \((x_0, y_0)\)에 접근할 때 \(f\)의 극한은 \(L\)에 접근한다고 한다. 
 
 $$
-0 < \sqrt{(x - x^0)^2 + (y - y_0)^2} < \delta \rightarrow |f(x, y) - L| < \epsilon
+0 < \sqrt{(x - x^0)^2 + (y - y_0)^2} < \delta
+$$
+
+$$
+\rightarrow |f(x, y) - L| < \epsilon
 $$
 
 > \((x, y)\)가 \((x_0, y_0)\)에 접근할 때 \(f\)의 극한은 \(L\)이라면, 다음과 같이 표현한다.
@@ -59,18 +65,28 @@ $$
 > 점 \((x_0, y_0)\)에서 \(x\)에 대한 함수 \(f(x, y)\)의 편미분계수 (partial derivative)는 극한이 존재할 경우 다음과 같다.
 
 $$
-\frac{\partial f}{\partial x}(x_0, y_0) = \lim_{h \rightarrow 0}\frac{f(x_0 + h, y_0) - f(x_0, y_0)}{h}
+\frac{\partial f}{\partial x}(x_0, y_0) = 
+$$
+
+$$
+\lim_{h \rightarrow 0}\frac{f(x_0 + h, y_0) - f(x_0, y_0)}{h}
 $$
 
 > 또한, 점 \((x_0, y_0)\)에서 \(y\)에 대한 함수 \(f(x, y)\)의 편미분계수는 극한이 존재할 경우 다음과 같다.
 
 $$
-\frac{\partial f}{\partial y}(x_0, y_0) = \lim_{h \rightarrow 0}\frac{f(x_0, y_0 + h) - f(x_0, y_0)}{h}
+\frac{\partial f}{\partial y}(x_0, y_0) =
+$$
+
+$$
+\lim_{h \rightarrow 0}\frac{f(x_0, y_0 + h) - f(x_0, y_0)}{h}
 $$
 
 **점 \((x_0, y_0)\)에서 \(x\)에 대한 함수 \(f(x, y)\)의 편미분계수는 \(x = x_0\)에서 \(x\)에 대한 \(1\)-변수 함수 \(f(x, y_0)\)의 미분계수와 같다.** 마찬가지로, 점 \((x_0, y_0)\)에서 \(y\)에 대한 함수 \(f(x, y)\)의 편미분계수는 \(y = x_0\)에서 \(y\)에 대한 \(1\)-변수 함수 \(f(x_0, y)\)의 미분계수와 같다. 편미분계수와 미분계수의 구별을 위해, 편미분계수는 미분계수의 \(d\) 대신 \(\partial\) (partial, round(-ed d))기호를 사용한다.
 
 편미분계수가 존재하는 모든 점들의 집합을 정의역으로 하는 편도함수는 다변수 함수의 독립 변수 중에 하나를 선택하고 나머지 변수들은 상수 취급하여 계산한, 단 하나의 독립 변수에 대한 도함수를 뜻하며, 보통 \(\frac{\partial f}{\partial x}\), \(\frac{\partial z}{\partial x}\), 또는 \(f_x\)와 같이 나타낸다.
+
+---
 
 ### 클레로의 정리
 
@@ -80,9 +96,9 @@ $$
 \frac{\partial}{\partial x}(\frac{\partial f}{\partial y}) = \frac{\partial^2 f}{\partial x \partial y} = f_{xy}
 $$
 
-\(2\)계 편도함수 \(\frac{\partial^2 f}{\partial x \partial y}\)와 \(\frac{\partial^2 f}{\partial y \partial x}\)가 항상 같은 것은 아닌데, **클레로의 정리 (Clairaut's theorem)에 의하면 두 \(2\)계 편도함수가 같기 위해서는 \(f\), \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 모두 연속이어야 한다.**
+\(2\)계 편도함수 \(\frac{\partial^2 f}{\partial x \partial y}\)와 \(\frac{\partial^2 f}{\partial y \partial x}\)가 항상 같은 것은 아닌데, 아래 정리에 의하면 **두 \(2\)계 편도함수가 같기 위해서는 \(f\), \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 모두 연속이어야 한다.**
 
-> **클레로의 정리:** 함수 \(f\)와 도함수 \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 점 \((a, b)\)를 포함하는 열린 영역에서 정의되고 \((a, b)\)에서 모두 연속이면 다음이 성립한다.
+> **클레로의 정리 (Clairaut's theorem):** 함수 \(f\)와 도함수 \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 점 \((a, b)\)를 포함하는 열린 영역에서 정의되고 \((a, b)\)에서 모두 연속이면 다음이 성립한다.
 
 $$
 f_{xy}(a, b) = f_{yx}(a, b)
@@ -93,10 +109,14 @@ $$
 > 함수 \(z = f(x, y)\)에서 \(f_x(x_0, y_0)\)과 \(f_y(x_0, y_0)\)이 존재하고 \(\Delta z\)가 아래 방정식을 만족하면, \(f\)는 \((x_0, y_0)\)에서 미분 가능하다. (단, \(\Delta x \rightarrow 0\)이고 \(\Delta y \rightarrow 0\)일 때 \(\epsilon_1 \rightarrow 0\)이고 \(\epsilon_2 \rightarrow 0\))
 
 $$
-\Delta z = f_x(x_0, y_0)\Delta x + f_y(x_0, y_0)\Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta_y
+\Delta z = f_x(x_0, y_0)\Delta x + f_y(x_0, y_0)\Delta y +
 $$
 
-(추가 예정)
+$$
+\epsilon_1 \Delta x + \epsilon_2 \Delta_y
+$$
+
+---
 
 ### 연쇄 법칙
 
@@ -115,7 +135,11 @@ $$
 > \(2\)-변수 함수 \(w = f(x, y)\)가 미분 가능하고 \(t\)에 대한 두 함수 \(x = x(t)\), \(y = y(t)\)가 미분 가능할 때, \(w = f(x(t), y(t))\)의 도함수는 다음과 같다.
 
 $$
-\frac{dw}{dt} = f_x(x(t), y(t))x'(t) + f_y(x(t), y(t))y'(t)
+\frac{dw}{dt} = f_x(x(t), y(t))x'(t) +
+$$
+
+$$
+f_y(x(t), y(t))y'(t)
 $$
 
 $$
@@ -138,7 +162,75 @@ $$
 \frac{dw}{ds} = \frac{\partial f}{\partial x} \frac{dx}{ds} + \frac{\partial f}{\partial y} \frac{dy}{ds} + \frac{\partial f}{\partial x} \frac{dz}{ds}
 $$
 
-일반적으로, 여러 개의 중간 변수와 독립 변수를 가지는 합성 함수의 (편)도함수는 각각의 중간 변수에 대한 \(w\)의 편도함수로 이루어진 벡터 \((\frac{\partial w}{\partial x}, \frac{\partial w}{\partial y}, \cdots)\)와 각각의 독립 변수에 대한 중간 변수의 편도함수로 이루어진 벡터 \((\frac{\partial x}{\partial p}, \frac{\partial y}{\partial p}, \cdots)\)의 내적으로 볼 수 있다.
+일반적으로, 여러 개의 중간 변수와 독립 변수를 가지는 합성 함수 \(w = f(x, y, \cdots)\)의 \(p\)에 대한 (편)도함수는 각각의 중간 변수에 대한 \(w\)의 편도함수로 이루어진 벡터 \((\frac{\partial w}{\partial x}, \frac{\partial w}{\partial y}, \cdots)\)와 독립 변수 \(p\)에 대한 중간 변수의 편도함수로 이루어진 벡터 \((\frac{\partial x}{\partial p}, \frac{\partial y}{\partial p}, \cdots)\)의 내적으로 볼 수 있다.
+
+---
+
+### 방향 도함수
+
+![방향 도함수](/images/notes/numanal_01-multivariable_calculus/directional_derivative.png)
+
+점 \(P(x_0, y_0)\)에서 함수 \(z = f(x, y)\)의 편미분계수는 \(P\)에서 \(x\)값 또는 \(y\)값이 변화함에 따라 \(z\)가 어떻게 변화하는지를 나타내는 순간변화율이자, \(P\)를 지나고 \(x\)축 또는 \(y\)축과 평행한 접선의 기울기를 나타낸다.
+
+이제 \(x\)축 또는 \(y\)축과 평행한 방향 대신, 임의의 벡터 \(u\)의 방향으로 \(P\)을 지날 때의 \(u\) 방향에 대한 \(z\)의 변화율을 생각해보자. 단위 벡터 \(u = u_1 i + u_2 j = (u_1, u_2)\)일 때 \(x = x_0 + su_1\)이고 \(y = y_0 + su_2\)라고 하면, \(x\)와 \(y\)는 \(P\)를 지나고 \(u\) 방향으로 향하는 직선의 방정식이다.
+
+> 단위 벡터 \(u = u_1 i + u_2 j\) 방향에 대한 \(P(x_0, y_0)\)에서의 \(f\)의 방향 미분계수 (directional derivative)는 극한이 존재하면 다음과 같이 정의된다.
+
+$$
+\lim_{s \rightarrow 0} \frac{f(x_0 + su_1, y_0 + su_2) - f(x_0, y_0)}{s}
+$$
+
+일반적으로, \(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수는 \(D_u f(P_0)\)과 같이 나타낸다.
+
+### 기울기 벡터
+
+연쇄 법칙을 이용하면 \(f\)의 방향 미분계수를 쉽게 구할 수 있다.
+
+$$
+D_u f(P_0) = f_x(x_0, y_0) \frac{dx}{ds} +
+$$
+
+$$
+f_y(x_0, y_0) \frac{dy}{ds}
+$$
+
+$$
+= f_x(x_0, y_0) u_1 + f_y(x_0, y_0) u_2
+$$
+
+$$
+= (f_x(x_0, y_0) i + f_y(x_0, y_0) j) \cdot u
+$$
+
+따라서 \(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수는 벡터 \((f_x(x_0, y_0) i + f_y(x_0, y_0) j)\)와 \(u\)의 내적이다.
+
+> 다음과 같은 벡터를 \(f(x, y)\)의 기울기 벡터 (gradient vector, gradient) \(\nabla f\) (grad \(f\), del \(f\))라고 한다.
+
+$$
+\nabla f = \frac{\partial f}{\partial x} i + \frac{\partial f}{\partial y} j
+$$
+
+기울기 벡터를 이용해 \(u = \frac{i}{\sqrt{2}} + \frac{j}{\sqrt{2}}\) 방향에 대한 \(P(1, 1)\)에서의 함수 \(f(x, y) = \frac{x^2}{2} + \frac{y^2}{2}\)의 방향 미분 계수를 계산해보자.
+
+$$
+\frac{\partial f}{\partial x} = x, \ \frac{\partial f}{\partial y} = y
+$$
+
+$$
+\nabla f = (x, y)
+$$
+
+$$
+\therefore D_u f(1, 1) = \nabla f (1, 1) \cdot u = u
+$$
+
+### 방향 미분계수의 성질
+
+\(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수 \(D_u f = \nabla f \cdot u\)라고 하였는데, \(u\)가 단위 벡터이므로 \(\nabla f \cdot u = |\nabla f| \ cos \theta\)가 된다. 따라서 두 벡터 \(\nabla f\)와 \(u\) 사이의 각 \(\theta\)를 통해 아래와 같은 성질을 얻을 수 있다.
+
+> 1. \(cos \ \theta = 1\)이라면 \(u\)는 \(\nabla f\)와 같은 방향이고 \(f\)가 가장 빠르게 증가한다.
+> 2. \(cos \ \theta = -1\)이라면 \(u\)는 \(\nabla f\)의 반대 방향이고 \(f\)가 가장 빠르게 감소한다.
+> 3. \(cos \ \theta = 0\)이라면 \(u\)는 \(\nabla f\)와 수직이고 \(f\)의 변화가 \(0\)이다.
 
 ---
 
