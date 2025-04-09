@@ -98,6 +98,48 @@ $$
 
 (추가 예정)
 
+### 연쇄 법칙
+
+\(1\)-변수 함수 \(y = f(u)\)와 \(u = g(x)\)로 이루어진 합성 함수 \(f \circ g\)의 도함수 \((f \circ g)'\)는 아래와 같이 연쇄 법칙 (chain rule)을 이용하여 구할 수 있는데, 여기서 \(u\)는 중간 변수 (intermediate variable)이고 \(x\)는 독립 변수이다. 
+
+$$
+(f \circ g)'(x) = f'(g(x)) \cdot g'(x)
+$$
+
+$$
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+$$
+
+**합성 함수가 여러 개의 중간 변수와 독립 변수를 가지더라도, 연쇄 법칙을 이용하면 (편)도함수를 쉽게 계산할 수 있다.** 예를 들어, 독립 변수 \(t\)와 중간 변수 \(x = x(t)\), \(y = y(t)\)로 이루어진 합성 함수의 도함수를 구해보자.
+
+> \(2\)-변수 함수 \(w = f(x, y)\)가 미분 가능하고 \(t\)에 대한 두 함수 \(x = x(t)\), \(y = y(t)\)가 미분 가능할 때, \(w = f(x(t), y(t))\)의 도함수는 다음과 같다.
+
+$$
+\frac{dw}{dt} = f_x(x(t), y(t))x'(t) + f_y(x(t), y(t))y'(t)
+$$
+
+$$
+\frac{dw}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt}
+$$
+
+중간 변수가 \(x = x(t)\), \(y = y(t)\), \(z = z(t)\)로 하나 더 늘어나더라도, \(z\)에 대한 항을 하나만 더 추가해주면 하나의 독립 변수 \(t\)와 세 중간 변수 \(x\), \(y\)와 \(z\)에 대한 공식을 얻을 수 있다.
+
+$$
+\frac{dw}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} + \frac{\partial f}{\partial z} \frac{dz}{dt}
+$$
+
+독립 변수의 개수가 하나 더 늘어나면 공식은 어떻게 바뀔까? 두 독립 변수 \(r\), \(s\)와 세 중간 변수 \(x = g(r, s)\), \(y = h(r, s)\), \(z = k(r, s)\)로 이루어진 함수 \(w = f(x, y, z)\)의 편도함수 \(\frac{dw}{dr}\)와 \(\frac{dw}{ds}\)는 아래와 같이 구할 수 있다.
+
+$$
+\frac{dw}{dr} = \frac{\partial f}{\partial x} \frac{dx}{dr} + \frac{\partial f}{\partial y} \frac{dy}{dr} + \frac{\partial f}{\partial x} \frac{dz}{dr}
+$$
+
+$$
+\frac{dw}{ds} = \frac{\partial f}{\partial x} \frac{dx}{ds} + \frac{\partial f}{\partial y} \frac{dy}{ds} + \frac{\partial f}{\partial x} \frac{dz}{ds}
+$$
+
+일반적으로, 여러 개의 중간 변수와 독립 변수를 가지는 합성 함수의 (편)도함수는 각각의 중간 변수에 대한 \(w\)의 편도함수로 이루어진 벡터 \((\frac{\partial w}{\partial x}, \frac{\partial w}{\partial y}, \cdots)\)와 각각의 독립 변수에 대한 중간 변수의 편도함수로 이루어진 벡터 \((\frac{\partial x}{\partial p}, \frac{\partial y}{\partial p}, \cdots)\)의 내적으로 볼 수 있다.
+
 ---
 
 ### 참고 문헌
