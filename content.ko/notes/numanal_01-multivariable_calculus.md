@@ -202,7 +202,7 @@ $$
 = (f_x(x_0, y_0) i + f_y(x_0, y_0) j) \cdot u
 $$
 
-따라서 \(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수는 벡터 \((f_x(x_0, y_0) i + f_y(x_0, y_0) j)\)와 \(u\)의 내적이다.
+따라서 \(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수는 벡터 \(f_x(x_0, y_0) i + f_y(x_0, y_0) j\)와 \(u\)의 내적 \(\nabla f \cdot u\)이다.
 
 > 다음과 같은 벡터를 \(f(x, y)\)의 기울기 벡터 (gradient vector, gradient) \(\nabla f\) (grad \(f\), del \(f\))라고 한다.
 
@@ -221,16 +221,94 @@ $$
 $$
 
 $$
-\therefore D_u f(1, 1) = \nabla f (1, 1) \cdot u = u
+\therefore D_u f(P) = \nabla f (P) \cdot u = u
 $$
 
 ### 방향 미분계수의 성질
 
-\(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수 \(D_u f = \nabla f \cdot u\)라고 하였는데, \(u\)가 단위 벡터이므로 \(\nabla f \cdot u = |\nabla f| \ cos \theta\)가 된다. 따라서 두 벡터 \(\nabla f\)와 \(u\) 사이의 각 \(\theta\)를 통해 아래와 같은 성질을 얻을 수 있다.
+\(u\) 방향에 대한 \(P\)에서의 \(f\)의 방향 미분계수 \(D_u f\)는 (\nabla f \cdot u\)라고 하였는데, \(u\)가 단위 벡터이므로 \(\nabla f \cdot u = |\nabla f| \ cos \ \theta\)가 된다. 따라서 두 벡터 \(\nabla f\)와 \(u\) 사이의 각 \(\theta\)를 통해 아래와 같은 성질을 얻을 수 있다.
 
-> 1. \(cos \ \theta = 1\)이라면 \(u\)는 \(\nabla f\)와 같은 방향이고 \(f\)가 가장 빠르게 증가한다.
-> 2. \(cos \ \theta = -1\)이라면 \(u\)는 \(\nabla f\)의 반대 방향이고 \(f\)가 가장 빠르게 감소한다.
+> 1. \(cos \ \theta = 1\)이라면 \(u\)는 \(\nabla f\)와 같은 방향이고 \(f\)는 가장 빠르게 증가한다.
+> 2. \(cos \ \theta = -1\)이라면 \(u\)는 \(\nabla f\)의 반대 방향이고 \(f\)는 가장 빠르게 감소한다.
 > 3. \(cos \ \theta = 0\)이라면 \(u\)는 \(\nabla f\)와 수직이고 \(f\)의 변화가 \(0\)이다.
+
+---
+
+### 극값과 안장점
+
+\(1\)-변수 함수 \(f(x)\)에서는 최댓값 (absolute maximum)과 최솟값 (absolute maximum)을 아래와 같이 정의하고, 특정 구간에 대한 최댓값과 최솟값을 각각 극댓값 (local maximum)과 극솟값 (local minimum)이라고 하였다.
+
+> 함수 \(f(x)\)의 정의역에 포함된 모든 점 \(x\)에 대해 \(f(x) \le f(c)\)를 만족하는 점 \(c\)를 \(f\)의 최댓값 (absolute maximum)이라고 하며, \(f(x) \ge f(c)\)를 만족하는 점 \(c\)를 \(f\)의 최솟값 (absolute maximum)이라고 한다.
+
+이제 \(2\)-변수 함수 \(f(x, y)\)의 극댓값과 극솟값을 정의한다.
+
+> \(f(x, y)\)가 점 \((a, b)\)를 포함하는 유계 영역 \(R\)에서 정의되었다고 하자.
+> 
+> 1. \((a, b)\)를 중심으로 하는 원판 내의 모든 점 \((x, y)\)에서 \(f(a, b) \ge f(x, y)\)이면, \(f(a, b)\)는 \(f\)의 극댓값이다.
+> 2. \((a, b)\)를 중심으로 하는 원판 내의 모든 점 \((x, y)\)에서 \(f(a, b) \le f(x, y)\)이면, \(f(a, b)\)는 \(f\)의 극솟값이다.
+
+![다변수 함수의 극값](/images/notes/numanal_01-multivariable_calculus/local_maximum.png)
+
+예를 들어, \((0, 0)\)을 중심으로 하고 반지름이 \(2\pi\)인 원판 \(R\)에서 정의된 \(f(x, y) = \cos x \cos y \ e^{-\sqrt{x^2 + y^2}}\)의 그래프를 보면 산의 봉우리 (peak)처럼 생긴 곳에 극댓값, 산의 골짜기 (valley)처럼 생긴 곳에 극솟값이 있다는 것을 알 수 있다.
+
+> \(f(x, y)\)가 유계 영역 \(R\)의 내부 점 \((a, b)\)에서 극값을 가지고, 이 점에서 편미분계수 \(f_x\)와 \(f_y\)가 존재하면, \(f_x(a, b) = f_y(a, b) = 0\)이다.
+
+\(1\)-변수 함수에서는 극값을 구하기 위해 그래프에서 접선의 기울기가 \(0\)인, 수평 접선을 가지는 점을 찾았다면, \(2\)-변수 함수에서는 극값을 구하기 위해 수평 접선 대신 수평 접평면 (tangent plane)을 가지는 점을 찾아야 한다. 
+
+점 \(P(x_0, y_0, z_0)\)에서 \(f(x, y, z) = c\)에 대한 접평면의 방정식은
+
+$$
+f_x(P)(x - x_0) + f_y(P)(y - y_0) + f_z(P)(z - z_0) = 0
+$$
+
+이므로, \(P(x_0, y_0, f(x_0, y_0))\)에서 \(z = f(x, y)\)에 대한 접평면의 방정식은
+
+$$
+f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0) - (z - z_0) = 0
+$$
+
+이다. 이 방정식에 \(f_x(x_0, y_0) = f_y(x_0, y_0) = 0\)을 대입하면 \(z = f(a, b)\)가 되므로, (2\)-변수 함수에서 극값을 가지는 점의 접평면은 항상 수평이어야 한다는 것을 알 수 있다.
+
+> \(f(x, y)\)의 정의역에 속한 점 \(P\)에 대해 \(f_x(P) = f_y(P) = 0\)이거나 \(f_x(P)\)와 \(f_y(P)\) 중에서 하나 이상이 존재하지 않는다면, \(P\)를 \(f\)의 임계점 (critical point)라고 한다.
+
+\(1\)-변수 함수에서는 \(f'(x)\)의 증감이 반대로 바뀌는 변곡점 (inflection point)이 존재했다면, 미분 가능한 \(2\)-변수 함수에서는 안장점 (saddle point)이라는 새로운 개념이 등장한다.
+
+![원점에 있는 안장점](/images/notes/numanal_01-multivariable_calculus/saddle_point.png)
+
+> 미분 가능한 함수 \(f(x, y)\)가 임계점 \((a, b)\)를 중심으로 하는 모든 열린 원판에서 \(f(x_0, y_0) > f(a, b)\)가 성립하는 점 \((x_0, y_0)\)과 \(f(x_1, y_1) < f(a, b)\)가 성립하는 또다른 점 \((x_1, y_1)\)이 동시에 존재할 때, \((a, b)\)를 안장점이라고 한다.
+
+### 헤시안 행렬
+
+> 다변수 함수 \(f(x_1, x_2, \cdots, x_n)\)의 모든 \(2\)-계 도함수가 포함된 \(n \times n\) 크기의 행렬을 헤시안 행렬 (Hessian matrix)이라고 하며, \(H_f\)와 같이 나타낸다.
+
+$$
+H_f = \begin{bmatrix}
+\frac{{\partial}^2 f}{\partial {x_1}^2} & \frac{{\partial}^2 f}{\partial {x_1} \partial {x_2}} & \cdots & \frac{{\partial}^2 f}{\partial {x_1} \partial {x_n}} \\
+\frac{{\partial}^2 f}{\partial {x_2} \partial {x_1}} & \frac{{\partial}^2 f}{\partial {x_2}^2} & \cdots & \vdots \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{{\partial}^2 f}{\partial {x_n} \partial {x_1}} & \cdots & \cdots & \frac{{\partial}^2 f}{\partial {x_n}^2}
+\end{bmatrix}
+$$
+
+예를 들면, \(2\)-변수 함수 \(z = f(x, y)\)의 헤시안 행렬 \(H_f\)는 다음과 같다.
+
+$$
+H_f = \begin{bmatrix}
+f_{xx} & f_{yx} \\
+f_{xy} & f_{yy}
+\end{bmatrix}
+$$
+
+클레로의 정리에 의하면, 영역 \(R\)에서 \(f\), \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 모두 연속일 때 \(f_{xy} = f_{yx}\)이므로 \(H_f\)는 대칭 행렬 (symmetric matrix)이 된다. 이제 \(H_f\)를 선형 대수의 관점에서 보면, \(H_f\)는 대칭 행렬이므로 \(H_f\)의 모든 고유값은 실수 (real number)이고, 스펙트럼 정리 (spectral theorem)에 의해 \(H_f = Q \Lambda Q^T = Q \Lambda Q^{-1}\) (단, \(Q\)는 정규 직교 행렬) 형태로 분해할 수 있다.
+
+점 \(P(a, b)\)에서 \(H_f\)의 모든 고유값이 양수라면 \(H_f\)를 양의 정부호 행렬 (positive definite matrix), \(H_f\)의 모든 고유값이 음수라면 \(H_f\)를 음의 정부호 행렬 (negative definite matrix)이라고 하는데, \(H_f\)가 양의 정부호 행렬인지 음의 정부호 행렬인지에 따라 \(f\)는 다음과 같은 특성을 가진다.
+
+> 함수 \(f\)가 점 \(P(a, b)\)가 포함된 영역 \(R\)에서 \(f\), \(f_x\), \(f_y\), \(f_{xy}\)와 \(f_{yx}\)가 모두 연속이고, \(f_x(a, b) = f_y(a, b) = 0\)이라고 가정하자.
+>
+> 1. \(P\)에서 \(f_{xx} < 0\)이고 \(|H_f| = f_{xx} f_{yy} - {f_{xy}}^2 > 0\)이면, \(f\)는 \(P\)에서 극댓값을 가진다.
+> 2. \(P\)에서 \(f_{xx} > 0\)이고 \(|H_f| = f_{xx} f_{yy} - {f_{xy}}^2 > 0\)이면, \(f\)는 \(P\)에서 극솟값을 가진다.
+> 3. \(P\)에서 \(|H_f| = f_{xx} f_{yy} - {f_{xy}}^2 < 0\)이면, \(P\)는 안장점이다.
+> 4. \(|H_f| = f_{xx} f_{yy} - {f_{xy}}^2 = 0\)이면, \(P\)가 어떤 점인지 판정할 수 없으므로, 다른 방법으로 \(P\)를 조사해야 한다.
 
 ---
 
