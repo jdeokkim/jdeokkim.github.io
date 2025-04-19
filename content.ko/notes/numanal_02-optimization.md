@@ -92,15 +92,93 @@ $$
 
 > 벡터 \(x\)의 \(L^\infty\) 노름 \(\| \mathbf{x} \|_\infty = max(|x_1|, |x_2|)\)이다.
 
+---
+
 ### 뉴턴–랩슨 방법
 
-뉴턴–랩슨 방법 (Newton–Raphson method)은 방정식 \(f(x) = 0\)의 해를 구하거나 볼록 함수 \(f(x)\)의 최솟값을 찾기 위해 사용할 수 있는 대표적인 방법 중 하나로, \(f(x)\)가 \(x^* = argmin \ f(x)\)에서 최솟값을 가지면 \(\nabla f(x) = \mathbf{0}\)임을 이용한다.
+뉴턴–랩슨 방법 (Newton–Raphson method)은 방정식 \(f(\mathbf{x}) = 0\)의 해를 구하거나 함수 \(f(\mathbf{x})\)의 최솟값을 찾기 위해 사용할 수 있는 대표적인 방법 중 하나로, \(f(\mathbf{x})\)가 \(\mathbf{x^*} = argmin \ f(\mathbf{x})\)에서 최솟값을 가지면 \(\nabla f(\mathbf{x}) = \mathbf{0}\)임을 이용한다.
 
-먼저, \(f(x)\)에서 한 점 \(x_k\)을 임의로 선택한 다음, \(x_{k + 1}\)을 \(x_k\)보다 \(x^*\)에 더 가까운 점이라고 하자. \(x_{k + 1}\)이 \(argmin \ f(x)\)에 가까워진다는 것은 \(x_{k + 1}\)에서의 기울기 벡터 \(\nabla f(x_{k + 1})\)이 \(\mathbf{0}\)에 가까워진다는 것을 뜻한다.
+먼저, \(f(\mathbf{x})\)에서 한 점 \(\mathbf{x_0}\)을 임의로 선택한 다음, \(\mathbf{x_{k + 1}}\)를 \(\mathbf{x_{k}}\)보다 \(\mathbf{x^*}\)에 더 가까운 점이라고 하자. \(\mathbf{x_{k + 1}}\)이 \(argmin \ f(x)\)에 가까워진다는 것은 \(\mathbf{x_{k + 1}}\)에서의 기울기 벡터 \(\nabla f(\mathbf{x_{k + 1}})\)이 \(\mathbf{0}\)에 가까워진다는 것을 뜻한다.
 
-이제 \(\nabla f(x_{k + 1})\)를 선형 근사식 (linear approximation)으로 나타내면 \(\nabla f(x_{k + 1}) \approx \nabla f(x_k) + H_f(x_k) (x_{k + 1} - x_k)\)가 되는데, 
+점 \(\mathbf{x} = \mathbf{x_{k}}\)에서 \(\nabla f(x)\)를 선형 근사식 (linear approximation) \(L(\mathbf{x})\)로 표현하면
 
-(추가 예정)
+$$
+\nabla f(\mathbf{x}) \approx L(x) = \nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x} - \mathbf{x_k})
+$$
+
+\(L(\mathbf{x})\)에 \(\mathbf{x} = \mathbf{x_{k + 1}}\)을 대입하면
+
+$$
+\nabla f(\mathbf{x_{k + 1}}) \approx \nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x_{k + 1}} - \mathbf{x_k})
+$$
+
+이제 \(\mathbf{x_{k}}\)가 \(\mathbf{x^*}\)와 충분히 가까워서 \(\nabla f(\mathbf{x_{k + 1}}) = \mathbf{0}\)이라고 하면
+
+$$
+\nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x_{k + 1}} - \mathbf{x_k}) = 0
+$$
+
+따라서 아래 방정식을 통해 \(\mathbf{x_{k + 1}}\)를 구할 수 있다.
+
+$$
+H_f(\mathbf{x_k}) (\mathbf{x_{k + 1}} - \mathbf{x_k}) = -\nabla f(\mathbf{x_k})
+$$
+
+뉴턴–랩슨 방법을 통해 \(f(x) = x^3 - 3x + 1\)의 최솟값을 찾아 보자.
+
+> 1. \(x_0 = \frac{1}{2}\)
+
+$$
+H_f(x) = \begin{bmatrix}
+    f''(x)
+\end{bmatrix}
+= \begin{bmatrix}
+    6x
+\end{bmatrix}
+$$
+
+$$
+\nabla f(x) = \begin{bmatrix}
+f'(x)
+\end{bmatrix}
+= \nabla f(x) = \begin{bmatrix}
+3x^2 - 3
+\end{bmatrix}
+$$
+
+$$
+f''(x_0)(x_1 - x_0) = -f'(x_0)
+$$
+
+$$
+3(x_1 - \frac{1}{2}) = -\frac{9}{4}
+$$
+
+$$
+\therefore x_1 = \frac{5}{4}
+$$
+
+> 2. \(x_1 = \frac{5}{4}\)
+
+$$
+\vdots
+$$
+
+$$
+f''(x_1)(x_2 - x_1) = -f'(x_1)
+$$
+
+$$
+\vdots
+$$
+
+$$
+\therefore x_2 \approx 1.025
+$$
+
+이 과정을 계속 반복할수록 \(x_k\)가 \(x = 1\)에 점점 가까워지는 것을 확인할 수 있다.
+
+![뉴턴–랩슨 방법](/images/notes/numanal_02-optimization/newton_raphson.png)
 
 ### 참고 문헌
 
