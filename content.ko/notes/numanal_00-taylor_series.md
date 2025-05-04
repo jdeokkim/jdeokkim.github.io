@@ -3,7 +3,7 @@ title: "수치 해석: 테일러 정리"
 date: "2025-04-04T22:49:00+09:00"
 hideReply: true
 math: true
-tags: ["calculus", "numanal", "numerical-analysis", "taylor-series"]
+tags: ["calculus", "numerical-analysis"]
 ---
 
 테일러 정리 (Taylor's theorem)는 복잡한 형태의 비선형 함수 (nonlinear function)를 다항식의 무한 급수 (infinite series) 형태로 근사 (approximate)할 수 있게 해주며, 수치 해석 (numerical analysis)와 딥 러닝 (deep learning)을 이해하기 위해 반드시 알아야 하는 수학적 개념이다.

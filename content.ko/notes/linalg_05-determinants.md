@@ -3,7 +3,7 @@ title: "선형 대수: 행렬식"
 date: "2025-03-28T21:04:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg"]
+tags: ["linear-algebra"]
 ---
 
 ### 행렬식의 정의

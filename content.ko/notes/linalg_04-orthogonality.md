@@ -3,7 +3,7 @@ title: "선형 대수: 직교성"
 date: "2025-03-28T18:09:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg"]
+tags: ["linear-algebra"]
 ---
 
 ### 부분 공간 사이의 직교 관계

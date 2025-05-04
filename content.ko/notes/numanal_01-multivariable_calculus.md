@@ -3,7 +3,7 @@ title: "수치 해석: 다변수 미적분학"
 date: "2025-04-05T23:49:00+09:00"
 hideReply: true
 math: true
-tags: ["calculus", "multivariable-calculus", "numanal", "numerical-analysis"]
+tags: ["calculus", "multivariable-calculus", "numerical-analysis"]
 ---
 
 ### 다변수 함수

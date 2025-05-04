@@ -3,7 +3,7 @@ title: "선형 대수: 연립 일차 방정식"
 date: "2025-02-17T23:43:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg"]
+tags: ["linear-algebra"]
 ---
 
 ### 행의 관점과 열의 관점

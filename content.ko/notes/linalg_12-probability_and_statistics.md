@@ -3,7 +3,7 @@ title: "선형 대수: 확률과 통계"
 date: "2025-04-14T22:23:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg", "probability", "statistics"]
+tags: ["linear-algebra", "probability", "statistics"]
 ---
 
 ### 표본 공간

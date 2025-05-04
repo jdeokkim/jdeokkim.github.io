@@ -3,7 +3,7 @@ title: "선형 대수: 고유값과 고유 벡터"
 date: "2025-03-30T22:04:00+09:00"
 hideReply: true
 math: true
-tags: ["linear-algebra", "linalg"]
+tags: ["linear-algebra"]
 ---
 
 ### 고유벡터의 정의

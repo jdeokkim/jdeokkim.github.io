@@ -3,7 +3,7 @@ title: "수치 해석: 최적화 이론"
 date: "2025-04-17T11:05:00+09:00"
 hideReply: true
 math: true
-tags: ["machine-learning", "multivariable-calculus", "numanal", "numerical-analysis", "optimization", "unconstrained-optimization"]
+tags: ["machine-learning", "multivariable-calculus", "numerical-analysis", "optimization"]
 ---
 
 수학에서 최적화 (optimization)란 함수 \(f(x_1, x_2, \cdots, x_n)\)의 최댓값 또는 최솟값을 찾는 과정을 뜻한다. 기계 학습 (machine learning)에서는 극값을 찾고자 하는 함수 \(f\)를 주로 목적 함수 (objective function, criterion)이라고 하며, 극솟값만을 찾는 경우 \(f\)를 손실 함수 (loss function, cost function)이라고 하기도 한다.
