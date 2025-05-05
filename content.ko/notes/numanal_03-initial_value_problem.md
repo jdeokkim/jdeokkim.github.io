@@ -84,33 +84,98 @@ $$
 > \(\ \ \ \ \ \ \ \ y_k \leftarrow y_k + h \cdot f(t_k, y_k)\)  
 > \(\ \ \ \ \ \ \ \ t_k \leftarrow t_k + h\)  
 > \(\textbf{end while}\)
----
-
-![오일러 방법](/images/notes/numanal_03-initial_value_problem/eulers_method.png)
 
 ---
 
-### 오일러 방법의 오차 분석
+![오일러 방법](/images/notes/numanal_03-initial_value_problem/forward_euler.png)
 
-오일러 방법은 \(n\)계 테일러 다항식을 통해서도 유도할 수 있다.
+---
+
+### 테일러 정리를 이용한 유도
+
+오일러 방법은 테일러 정리를 통해서도 유도할 수 있다.
 
 $$
-y(t + h) = y(t) + y'(t)h + \frac{y''(t)}{2!}h^2 + \cdots
+y(b) \approx y(a) + y'(a)(b - a) + \frac{y''(a)}{2!}(b - a)^2
 $$
 
+\(a\), \(b\)와 \(\theta\)를 각각 \(a = t\), \(b = t + h\), 그리고 \(\theta \in [a, b]\)라 하면
+
 $$
-\approx y(t) + hy'(t) + \frac{1}{2}h^2y''(t)
+y(t + h) \approx y(t) + hy'(t) + \frac{1}{2}h^2 y''(\theta)
 $$
 
-\(y(t + h) = y(t) + hy'(t)\), \(t = t_0\), \(t_{n + 1} = t_n + h\)라고 하면 이전과 동일하게 오일러 공식 \(y_{n + 1} = y_n + hf(t_n, y_n)\)을 얻을 수 있으며, 이때 \(R(t, h) = \frac{1}{2}h^2y''(t)\)를 오일러 방법의 잔차 (residual)라고 한다. 
+\(t = t_0\), \(t_{n + 1} = t_n + h\), \(y_n = y(t_n)\)으로 놓고 나머지 항 \(\frac{1}{2}h^2 y''(\theta)\)을 생략하면 오일러 방법에 해당하는 공식을 얻을 수 있다.
 
-**오일러 방법의 오차 (error)는 \(h\)에 대해 선형적으로 증가하는데**, 이러한 특성을 "오일러 방법이 \(1\)차 정확도 (first-order accuracy)를 가진다" 또는 "오일러 방법의 오차는 \(\mathcal{O}(h)\)이다"와 같이 나타낸다.
+$$
+y_{n + 1} \approx y_n + hf(t_n, y_n)
+$$
+
+이때 공식 유도를 위해 생략한 나머지 항을 오일러 방법의 잔차 (residual) \(R(t, h)\)라고 한다.
+
+$$
+R(t, h) = \frac{1}{2}h^2 y''(\theta)
+$$
+
+또한, 오일러 방법에서 잔차로 인해 발생하는 미분 방정식의 실제 해 사이의 오차를 절단 오차 (truncation error)라고 하며, \(\mathcal{r}(t, h)\)로 나타낸다.
+
+$$
+\mathcal{r}(t, h) = \frac{1}{h} R(t, h)
+$$
 
 ---
 
 ### 오일러 방법의 변형
 
-(추가 예정)
+초깃값 문제에서 주어지는 \(\frac{dy}{dt}\)의 정의를 이용하면 새로운 공식을 유도할 수 있다.
+
+$$
+\frac{dy}{dt} = y'(t) = f(t, y(t))
+$$
+
+$$
+= \lim_{h \rightarrow 0} \frac{y(t + h) - y(t)}{h}
+$$
+
+\(y'(t)\)를 테일러 다항식으로 나타낸 후 그대로 정리하면, 오일러 방법에 해당하는 공식을 얻을 수 있다.
+
+$$
+\frac{y(t + h) - y(t)}{h} \approx y'(t) + \frac{1}{2}h^2 y''(\theta)
+$$
+
+그런데 \(y'(t) \approx \frac{y(t) - y(t - h)}{h}\)로 정의하면
+
+$$
+\frac{y(t) - y(t - h)}{h} \approx y'(t) + \frac{1}{2}h^2 y''(\theta)
+$$
+
+역 오일러 방법 (backward Euler method)에 해당하는 공식을 얻는다.
+
+$$
+y_{n + 1} \approx y_n + hf(t_{n + 1}, y_{n + 1})
+$$
+
+---
+
+![역 오일러 방법](/images/notes/numanal_03-initial_value_problem/backward_euler.png)
+
+---
+
+또한, \(y'(t) \approx \frac{y(t + h) - y(t - h)}{2h}\)로 정의하면
+
+$$
+\frac{y(t + h) - y(t - h)}{2h} \approx y'(t) + \frac{1}{6}h^2 y'''(\theta)
+$$
+
+중간점 방법 (midpoint method)에 해당하는 공식을 유도할 수 있다.
+
+$$
+y_{n + 1} \approx y_{n - 1} + 2hf(t_n, y_n)
+$$
+
+---
+
+![중간점 방법](/images/notes/numanal_03-initial_value_problem/midpoint.png)
 
 ---
 
