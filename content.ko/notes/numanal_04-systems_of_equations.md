@@ -112,21 +112,21 @@ $$
 ---
 
 > \(\textbf{Algorithm 1: }\)  
-> \(\text{Naive Gaussian Elimination for } A\mathbf{x} = b\)
+> \(\text{Naive Gaussian Elimination}\)
 >
 > \(\textbf{Require: } A \ (M \times N \text{ Matrix})\)  
 > \(\textbf{Require: } b \ (M \times 1 \text{ Matrix})\)  
 > 
-> \(\textbf{for} \ c \in \{1, 2, \cdots, M - 1\} \ \textbf{do}\)  
-> \(\ \ \ \ \textbf{for} \ r \in \{c + 1, \cdots, N\} \ \textbf{do}\)  
-> \(\ \ \ \ \ \ \ \ m \leftarrow \frac{A_{rc}}{A_{cc}}\)  
+> \(\textbf{for} \ c \in \{1, \cdots, M - 1\} \ \textbf{do}\)  
+> \(\ \ \textbf{for} \ r \in \{c + 1, \cdots, N\} \ \textbf{do}\)  
+> \(\ \ \ \ m \leftarrow \frac{A_{rc}}{A_{cc}}\)  
 > 
-> \(\ \ \ \ \ \ \ \ \textbf{for} \ k \in \{c, \cdots, M\} \ \textbf{do}\)  
-> \(\ \ \ \ \ \ \ \ \ \ \ \ A_{rk} \leftarrow A_{rk} - m \cdot A_{ck}\)  
-> \(\ \ \ \ \ \ \ \ \textbf{end for}\)  
->
-> \(\ \ \ \ \ \ \ \ b_{r1} \leftarrow A_{r1} - m \cdot A_{c1}\)  
+> \(\ \ \ \ \textbf{for} \ k \in \{c, \cdots, M\} \ \textbf{do}\)  
+> \(\ \ \ \ \ \ A_{rk} \leftarrow A_{rk} - m \cdot A_{ck}\)  
 > \(\ \ \ \ \textbf{end for}\)  
+>
+> \(\ \ \ \ b_{r1} \leftarrow A_{r1} - m \cdot A_{c1}\)  
+> \(\ \ \textbf{end for}\)  
 > \(\textbf{end for}\)  
 
 ```python
@@ -159,7 +159,7 @@ for c in range(len(A[0]) - 1):
 ---
 
 > \(\textbf{Algorithm 2: }\)  
-> \(\text{Backward Substitution for } A\mathbf{x} = b\)
+> \(\text{Backward Substitution}\)
 >
 >
 > \(\textbf{Require: } A \ (M \times N \text{ Matrix})\)  
@@ -167,14 +167,15 @@ for c in range(len(A[0]) - 1):
 > 
 > \(\mathbf{x}_{M1} \leftarrow \frac{b_{M1}}{A_{MM}}\)
 >
-> \(\textbf{for} \ r \in \{M - 1, M - 2, \cdots, 1\} \ \textbf{do}\)  
-> \(\ \ \ \ sum \leftarrow 0\)  
+> \(\textbf{for} \ r \in \{M - 1, \cdots, 1\} \ \textbf{do}\)  
+> \(\ \ sum \leftarrow 0\)  
 >
-> \(\ \ \ \ \textbf{for} \ c \in \{r + 1, \cdots, N\} \ \textbf{do}\)  
-> \(\ \ \ \ \ \ \ \ sum \leftarrow sum + A_{rc} \cdot \mathbf{x}_{c1}\)  
-> \(\ \ \ \ \textbf{end for}\)  
+> \(\ \ \textbf{for} \ c \in \{r + 1, \cdots, N\} \ \textbf{do}\)  
+> \(\ \ \ \ sum \leftarrow sum + A_{rc} \cdot \mathbf{x}_{c1}\)  
+> \(\ \ \textbf{end for}\)  
 >  
-> \(\ \ \ \ \mathbf{x}_{r1} \leftarrow \frac{(b_{r1})}{A_{rr}}\)
+> \(\ \ \mathbf{x}_{r1} \leftarrow \frac{(b_{r1})}{A_{rr}}\)  
+> \(\textbf{end for}\)  
 
 ```python
 M: int = len(A)
