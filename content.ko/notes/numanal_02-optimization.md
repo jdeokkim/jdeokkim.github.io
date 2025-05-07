@@ -19,25 +19,41 @@ tags: ["machine-learning", "multivariable-calculus", "numerical-analysis", "opti
 [테일러 정리 (Taylor's theorem)]({{< ref "numanal_00-taylor_series.md" >}})에 의하면, \(f\), \(f'\)와 \(f''\)가 모두 연속이고 미분 가능하면 \(f(\alpha)\)를 다음과 같이 \(2\)계 테일러 다항식 (Taylor polynomial of order \(2\))으로 근사하여 나타낼 수 있다.
 
 $$
-f(\alpha) \approx f(\alpha_0) + \frac{f'(\alpha_0)}{1!} (\alpha - \alpha_0) + \frac{f''(\alpha_0)}{2!} (\alpha - \alpha_0)^2
+f(\alpha) \approx f(\alpha_0) + \frac{f'(\alpha_0)}{1!} (\alpha - \alpha_0) +
+$$
+
+$$
+\frac{f''(\alpha_0)}{2!} (\alpha - \alpha_0)^2
 $$
 
 \(\alpha - \alpha_0 = \Delta x\)라고 하면, \(\alpha = \alpha_0 + \Delta x\)인데, 이 식을 \(2\)계 테일러 다항식에 대입하면
 
 $$
-f(\alpha_0 + \Delta x) \approx f(\alpha_0) + \frac{f'(\alpha_0)}{1!} \Delta x + \frac{f''(\alpha_0)}{2!} (\Delta x)^2
+f(\alpha_0 + \Delta x) \approx f(\alpha_0) +
+$$
+
+$$
+\frac{f'(\alpha_0)}{1!} \Delta x + \frac{f''(\alpha_0)}{2!} (\Delta x)^2
 $$
 
 **마지막으로, \(\alpha_0\)에 \(x\)를 대입하면 \(f(x + \Delta x)\)에 대한 \(2\)계 테일러 다항식을 얻는다.**
 
 $$
-f(x + \Delta x) \approx f(x) + \frac{f'(x)}{1!} \Delta x + \frac{f''(x)}{2!} (\Delta x)^2
+f(x + \Delta x) \approx f(x) + \frac{f'(x)}{1!} \Delta x +
+$$
+
+$$
+\frac{f''(x)}{2!} (\Delta x)^2
 $$
 
 \(n\)-변수 함수 \(f(x) = f(x_1, \cdots, f_n)\)에 대한 테일러 다항식도 같은 방법으로 유도할 수 있는데, 여기서 \(\nabla f\)는 \(f\)의 기울기 벡터 (gradient)를 열 벡터 형태 (\(\begin{bmatrix} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n}\end{bmatrix}^T\))로 나타낸 것이고, \(H_f\)는 \(f\)의 헤시안 행렬 (Hessian matrix)이다.
 
 $$
-f(x + \Delta x) \approx f(x) + (\Delta x)^T \nabla f + \frac{1}{2!} (\Delta x)^T H_f (\Delta x)
+f(x + \Delta x) \approx f(x) + (\Delta x)^T \nabla f +
+$$
+
+$$
+\frac{1}{2!} (\Delta x)^T H_f (\Delta x)
 $$
 
 마지막으로, \(m\)개의 다변수 함수로 정의되는 벡터 함수 \(f = (f_1, \cdots, f_m)\)과 \(n\)개의 변수 \(x_1, \cdots, x_n\)에 대한 \(f\)의 근사식은 다음과 같다.
@@ -69,13 +85,21 @@ $$
 > 함수 \(f\)의 두 점 \(x\), \(y\)와 \(0 \ge \lambda \ge 1\)에 대해, 아래 조건을 만족하는 \(f\)를 볼록 함수라고 한다.
 
 $$
-f(\lambda x + (1 - \lambda) y) \le \lambda f(x) + (1 - \lambda) f(y)
+f(\lambda x + (1 - \lambda) y) 
+$$
+
+$$
+\le \lambda f(x) + (1 - \lambda) f(y)
 $$
 
 > 또한, 아래 조건을 만족하는 \(f\)를 엄격한 볼록 함수 (strictly convex function)이라고 한다.
 
 $$
-f(\lambda x + (1 - \lambda) y) < \lambda f(x) + (1 - \lambda) f(y)
+f(\lambda x + (1 - \lambda) y)
+$$
+
+$$
+< \lambda f(x) + (1 - \lambda) f(y)
 $$
 
 \(f\)가 볼록 함수가 되려면, \(f\) 위의 두 점 \(x\)와 \(y\)를 잇는 할선 (secant)이 항상 \(f\)의 그래프 위에 있어야 한다는 것이다. 따라서 \(y = x^2\)는 볼록 함수이지만 \(y = -x^2\)는 볼록 함수가 아니다.
@@ -103,13 +127,21 @@ $$
 점 \(\mathbf{x} = \mathbf{x_{k}}\)에서 \(\nabla f(x)\)를 선형 근사식 (linear approximation) \(L(\mathbf{x})\)로 표현하면
 
 $$
-\nabla f(\mathbf{x}) \approx L(x) = \nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x} - \mathbf{x_k})
+\nabla f(\mathbf{x}) \approx L(x) =
+$$
+
+$$
+\nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x} - \mathbf{x_k})
 $$
 
 \(L(\mathbf{x})\)에 \(\mathbf{x} = \mathbf{x_{k + 1}}\)을 대입하면
 
 $$
-\nabla f(\mathbf{x_{k + 1}}) \approx \nabla f(\mathbf{x_k}) + H_f(\mathbf{x_k}) (\mathbf{x_{k + 1}} - \mathbf{x_k})
+\nabla f(\mathbf{x_{k + 1}}) \approx \nabla f(\mathbf{x_k}) +
+$$
+
+$$
+H_f(\mathbf{x_k}) (\mathbf{x_{k + 1}} - \mathbf{x_k})
 $$
 
 이제 \(\mathbf{x_{k}}\)가 \(\mathbf{x^*}\)와 충분히 가까워서 \(\nabla f(\mathbf{x_{k + 1}}) = \mathbf{0}\)이라고 하면
@@ -141,6 +173,9 @@ $$
 \nabla f(x) = \begin{bmatrix}
 f'(x)
 \end{bmatrix}
+$$
+
+$$
 = \nabla f(x) = \begin{bmatrix}
 3x^2 - 3
 \end{bmatrix}

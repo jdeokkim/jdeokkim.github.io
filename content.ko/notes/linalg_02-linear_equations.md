@@ -279,11 +279,11 @@ $$
 \end{bmatrix}
 $$
 
-### Gauss–Jordan 소거법
+### 가우스–요르단 소거법
 
 연립 일차 방정식 \(Ax = b\)의 해 \(x = A^{-1}b\)를 구하기 위해서는 \(A^{-1}\)이 필요하다. 
 
-Gauss–Jordan 소거법 (Gauss–Jordan elimination)의 핵심은 첨가 행렬 \([A \ I]\)에 기본 행 연산을 적용하여 \([I \ A^{-1}]\) 형태로 만드는 것이다.
+가우스–요르단 소거법 (Gauss–Jordan elimination)의 핵심은 첨가 행렬 \([A \ I]\)에 기본 행 연산을 적용하여 \([I \ A^{-1}]\) 형태로 만드는 것이다.
 
 예를 들면, \(A\)와 \(b\)가 아래와 같을 때,
 
@@ -300,7 +300,7 @@ b = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-먼저 \([A \ I]\)에 기본 행 연산을 수행하여 (\(A\)에 수행한 연산을 \(I\) 에도 똑같이 수행!) \(A\)를 상삼각 행렬 \(U\) 형태로 만든다. 여기까지의 과정을 Gauss 소거법 (Gaussian elimination)이라고 한다.
+먼저 \([A \ I]\)에 기본 행 연산을 수행하여 (\(A\)에 수행한 연산을 \(I\) 에도 똑같이 수행!) \(A\)를 상삼각 행렬 \(U\) 형태로 만든다. 여기까지의 과정을 가우스 소거법 (Gaussian elimination)이라고 한다.
 
 $$
 [A \ I] = \begin{bmatrix}
@@ -334,7 +334,7 @@ $$
 \end{bmatrix}
 $$
 
-Gauss–Jordan 소거법에서는 \(U\)를 기약 행사다리꼴 (reduced row echelon form, RREF) 형태를 거쳐 \(I\)로 만드는 과정을 추가적으로 수행한다.
+가우스–요르단 소거법에서는 \(U\)를 기약 행사다리꼴 (reduced row echelon form, RREF) 형태를 거쳐 \(I\)로 만드는 과정을 추가적으로 수행한다.
 
 $$
 \rightarrow \begin{bmatrix}
@@ -376,7 +376,7 @@ $$
 
 ### \(LU\) 분해 (\(A = LU\))
 
-> \(LU\) 분해 (\(LU\) decomposition)이란 가역 행렬 \(A\)를 상삼각 행렬과 하삼각 행렬 (lower triangular matrix)의 곱 \(LU\)로 분해하는 과정을 뜻하며, Gauss 소거법을 첨가 행렬 없이 행렬의 곱으로만 나타낸 것이다.
+> \(LU\) 분해 (\(LU\) decomposition)이란 가역 행렬 \(A\)를 상삼각 행렬과 하삼각 행렬 (lower triangular matrix)의 곱 \(LU\)로 분해하는 과정을 뜻하며, 가우스 소거법을 첨가 행렬 없이 행렬의 곱으로만 나타낸 것이다.
 
 \(A\)를 \(LU\) 분해하기 위해서는 \(A = IA\)에서부터 시작해 \(A\)에 기본 행 연산을 수행할 때마다 그 연산에 대응하는 기본 행렬의 역행렬을 \(I\)에 곱해주는 과정을 \(A = LU\) 형태가 될 때까지 반복하면 된다.
 

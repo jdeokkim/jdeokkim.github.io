@@ -10,7 +10,7 @@ tags: ["numerical-analysis"]
 
 수치 해석에서 초깃값 문제 (initial value problem, IVP)란 \(\frac{dy}{dt} = f(t, y(t)), \ y(t_0) = y_0\)을 만족하는 \(y(t)\)의 근삿값을 계산하는 문제를 뜻하며, \(\frac{dy}{dt}\)로부터 \(y(t)\)를 구하는 과정을 "미분 방정식을 푼다"고 한다.
 
-> 함수 \(f: \mathbb{R}^{N + 1} \rightarrow \mathbb{R}^N \ (N > 0)\), 벡터 공간 \(\mathbb{R}^N\)의 원소 \(y_0\)과 스칼라 상수 \(t_0\)에 대하여, 아래 조건을 만족하는 \(\textbf{y}(t)\)를 미분 방정식 \(\frac{d\textbf{y}}{dt}\)에 대한 초깃값 문제라고 한다.
+> 함수 \(f: \mathbb{R}^{N + 1} \rightarrow \mathbb{R}^N\) (\(N > 0\)), 벡터 공간 \(\mathbb{R}^N\)의 원소 \(y_0\)과 스칼라 상수 \(t_0\)에 대하여, 아래 조건을 만족하는 \(\textbf{y}(t)\)를 미분 방정식 \(\frac{d\textbf{y}}{dt}\)에 대한 초깃값 문제라고 한다.
 
 $$
 \frac{d\textbf{y}}{dt} = f(t, \textbf{y}(t)), \textbf{y}(t_0) = y_0
@@ -32,7 +32,7 @@ $$
 
 **피카르–린델뢰프 정리 (Picard–Lindelöf theorem)는 \(\frac{dy}{dt}\)가 어떤 영역에서 연속이고 립시츠 연속일 경우, 그 영역에서 \(y(t)\)가 반드시 단 하나만 존재함을 보장해준다.** 
 
-> **피카르–린델뢰프 정리:** 함수 \(f(t, y(t))\)가 직사각형 영역 \(R = {(t, y) | a < t < b, \ c < y < d}\)에서 연속이고 \(y\)에 대한 열린 구간 \(c, d\)에서 립시츠 연속이면, \(R\)에 속하는 모든 \((t, y)\)에 대해 아래 조건을 만족하는 미분 방정식 \(\frac{dy}{dt}\)의 해는 반드시 존재하며, 그 해는 유일하다.
+> **피카르–린델뢰프 정리:** 함수 \(f(t, y(t))\)가 직사각형 영역 \(R = \{ (t, y) \ | \ a < t < b,\) \(\ c < y < d \}\)에서 연속이고 \(y\)에 대한 열린 구간 \(c, d\)에서 립시츠 연속이면, \(R\)에 속하는 모든 \((t, y)\)에 대해 아래 조건을 만족하는 미분 방정식 \(\frac{dy}{dt}\)의 해는 반드시 존재하며, 그 해는 유일하다.
 
 $$
 \frac{dy}{dt} = f(t, y(t)), \ y(t_0) = y_0
@@ -96,7 +96,11 @@ $$
 오일러 방법은 테일러 정리를 통해서도 유도할 수 있다.
 
 $$
-y(b) \approx y(a) + y'(a)(b - a) + \frac{y''(a)}{2!}(b - a)^2
+y(b) \approx y(a) + y'(a)(b - a) +
+$$
+
+$$
+\frac{y''(a)}{2!}(b - a)^2
 $$
 
 \(a\), \(b\)와 \(\theta\)를 각각 \(a = t\), \(b = t + h\), 그리고 \(\theta \in [a, b]\)라 하면
@@ -140,13 +144,21 @@ $$
 \(y'(t)\)를 테일러 다항식으로 나타낸 후 그대로 정리하면, 오일러 방법에 해당하는 공식을 얻을 수 있다.
 
 $$
-\frac{y(t + h) - y(t)}{h} \approx y'(t) + \frac{1}{2}h^2 y''(\theta)
+\frac{y(t + h) - y(t)}{h}
+$$
+
+$$
+\approx y'(t) + \frac{1}{2}h^2 y''(\theta)
 $$
 
 그런데 \(y'(t) \approx \frac{y(t) - y(t - h)}{h}\)로 정의하면
 
 $$
-\frac{y(t) - y(t - h)}{h} \approx y'(t) + \frac{1}{2}h^2 y''(\theta)
+\frac{y(t) - y(t - h)}{h}
+$$
+
+$$
+\approx y'(t) + \frac{1}{2}h^2 y''(\theta)
 $$
 
 역 오일러 방법 (backward Euler method)에 해당하는 공식을 얻는다.
@@ -176,6 +188,12 @@ $$
 ---
 
 ![중간점 방법](/images/notes/numanal_03-initial_value_problem/midpoint.png)
+
+---
+
+### 오차 분석
+
+(추가 예정)
 
 ---
 
