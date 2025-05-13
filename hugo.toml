@@ -98,6 +98,9 @@ title = "Jae's Tech Tips"
           block = [['$$', '$$']]
           inline = [['\(', '\)']]
 
+    [markup.goldmark.parser.attribute]
+      block = true
+
   [markup.highlight]
     lineNos = true
     lineNumbersInTable = false
