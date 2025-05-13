@@ -212,6 +212,10 @@ for r in range(n - 2, -1, -1):
 
 (추가 예정)
 
+### \(LU\) 분해
+
+(추가 예정)
+
 ---
 
 ### 띠 행렬
@@ -256,29 +260,45 @@ $$
 \frac{w(w - 1)(3n - 2w + 1)}{3}
 $$
 
-### 노름과 조건수
+### 노름의 정의
 
 \(\mathbb{R}^n\)의 벡터 \(\mathbf{x}\)의 크기 (size) \(||\mathbf{x}||\)는 \(\mathbf{x}\)의 길이 (length) \(\sqrt{\mathbf{x} \cdot \mathbf{x}} = \sqrt{{x_1}^2 + {x_2}^2 + \dots}\)로 정의할 수 있는데, 그렇다면 행렬의 크기도 정의할 수 있을까?
 
 > **벡터의 노름 (norm):** 벡터 공간 \(\mathbb{R}^n\)의 원소 \(\mathbf{x}\)의 노름 \(||\mathbf{x}||\)은 아래 조건을 모두 만족하는 \([0, \infty]\) 사이의 값이다.
 >
 > 1. \(\mathbf{x} \ne 0\)인 모든 \(\mathbf{x}\)에 대해, \(||\mathbf{x}|| > 0\)
-> 2. 스칼라 상수 \(a\)에 대해, \(||a\mathbf{x}|| = |a|||\mathbf{x}||\)
-> 3. \(||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||\)
+> 2. \(||\mathbf{x} + \mathbf{y}|| \le ||\mathbf{x}|| + ||\mathbf{y}||\)
+> 3. 스칼라 상수 \(c\)에 대해, \(||c\mathbf{x}|| = |c| \ ||\mathbf{x}||\)
 
-따라서 벡터의 노름은 "벡터의 크기를 나타내는 길이 등의 값"으로 볼 수 있다.
+벡터의 크기는 다음과 같이 다양한 형태의 노름으로 정의할 수 있다.
 
-> 벡터 \(x\)의 \(L^1\) 노름 \(\| \mathbf{x} \|_1 = \sum_{i=1}^{n} |x_i|\)이다.
+> 벡터 \(\mathbf{x} = (x_1, \cdots, x_n)\)의 \(L^1\) 노름 \(\| \mathbf{x} \|_1 = \sum_{i=1}^{n} |x_i|\)이다.
 
-> 벡터 \(x\)의 \(L^2\) 노름 \(\| \mathbf{x} \|_2 = \sqrt{(\sum_{i=1}^{n} (x_i)^2)}\)이다.
+> 벡터 \(\mathbf{x} = (x_1, \cdots, x_n)\)의 \(L^2\) 노름 \(\| \mathbf{x} \|_2 = \sqrt{(\sum_{i=1}^{n} (x_i)^2)}\)이다.
 
-> 벡터 \(x\)의 \(L^\infty\) 노름 \(\| \mathbf{x} \|_\infty = max(|x_1|, |x_2|)\)이다.
+> 벡터 \(\mathbf{x} = (x_1, \cdots, x_n)\)의 \(L^\infty\) 노름 \(\| \mathbf{x} \|_\infty = \max(|x_1|, \cdots, |x_n|)\)이다.
 
-벡터의 노름을 정의했으니, 이제 행렬의 노름도 정의해보자.
+### 행렬의 노름
 
-(추가 예정)
+노름의 개념을 일반화하여, 행렬의 노름도 정의해보자. 
 
-### \(LU\) 분해
+> 행렬 \(A\), \(B\)에 대해, \(A\)의 노름 \(||A||\)와 \(B\)의 노름 \(||B||\)는 아래 조건을 모두 만족한다.
+>
+> 1. \(||A|| \ge 0\)
+> 2. \(||A + B|| \le ||A|| + ||B||\)
+> 3. 스칼라 상수 \(c\)에 대해, \(||cA|| = |c| \ ||A||\)
+> 4. 벡터 \(\mathbf{x}\)에 대해, \(||A\mathbf{x}|| \le ||A|| \ ||\mathbf{x}||\)
+> 5. \(||AB|| \le ||A|| + ||B||\)
+
+행렬의 노름에 대한 조건을 살펴보면 기존 벡터의 노름에 대한 조건에서 네 번째 조건과 다섯 번째 조건이 새로 추가된 것을 알 수 있는데, 이를 통해 \(||A||\)가 \(\mathbf{x}\)와 \(B\)의 크기를 조절하는 역할을 한다는 것을 알 수 있다.
+
+> 행렬 \(A\)의 노름 \(||A||\)는 \(\frac{||A\mathbf{x}||}{||\mathbf{x}||}\)의 최댓값이다.
+
+$$
+||A|| = \max_{\mathbf{x} \ne 0} \frac{||A\mathbf{x}||}{||\mathbf{x}||}
+$$
+
+### 조건수 
 
 (추가 예정)
 
@@ -294,13 +314,145 @@ $$
 
 ---
 
-### 반복법과 전처리 행렬
+### 직접법과 반복법
+
+가우스 소거법, \(LU\) 분해와 크래머 법칙 (Cramer's Rule) 등은 연립 방정식 \(A\mathbf{x} = b\)의 계수 행렬 \(A\)에 기본 행 연산을 적용하거나 \(A\)의 행렬식을 이용해 연립 방정식의 정확한 해 \(\mathbf{x} = A^{-1}b\)를 구하는데, 이러한 방법을 직접법 (direct method)이라고 한다.
+
+그런데 계수 행렬이 크기가 매우 큰 희소 행렬일 경우에는 각 성분에 접근하고 행 교환과 피봇팅 등의 연산을 수행하는 과정에서 메모리 공간에 불연속적으로 접근하는 경우가 많기 때문에 CPU에서 캐시 미스 (cache miss)가 발생하게 되고, 연립 방정식의 해를 빠르게 구하기가 어려워지게 된다.
+
+반복법 (iterative method)은 계수 행렬 \(A\)를 \(A = S - T\)와 같이 \(S\)가 더 간단한 형태가 되도록 두 행렬로 나누고, \(A\mathbf{x} = b\)를 \(S\mathbf{x}_{k + 1} = T\mathbf{x}_k + b\)로 나타낸 다음, 정확한 해 \(\mathbf{x}\)를 구하는 대신 해의 근삿값 \(\mathbf{x}_k\)을 구하는 방법이다.
+
+### 반복법의 수렴 조건
 
 (추가 예정)
+
+---
+
+### 야코비 방법
+
+반복법을 이용해 \(A\mathbf{x} = b\)의 해의 근삿값을 구하는 과정을 간단히 살펴보자.
+
+> 1. \(\mathbf{x}_0\)을 임의의 벡터 (\(\mathbf{0}\)?)로 초기화한다.
+
+$$
+A = \begin{bmatrix}
+    4 & 2 & -1 \\ 
+    1 & 4 & 1 \\
+    2 & -1 & 4
+\end{bmatrix}, \
+b = \begin{bmatrix}
+    5 \\ 
+    12 \\
+    12
+\end{bmatrix}
+$$
+
+$$
+A\mathbf{x}_0 = A
+\begin{bmatrix}
+    0 \\ 
+    0 \\
+    0
+\end{bmatrix} = b
+$$
+
+> 2. \(A\)를 \(S - T\) 형태로 나눈다. 이때 \(S\)는 전처리 행렬 (preconditioner)이라고 하며, \(A\)보다 더 간단한 형태의 행렬이어야 한다.
+
+$$
+A = S - T
+$$
+
+$$
+= \begin{bmatrix}
+    4 & 0 & 0 \\ 
+    0 & 4 & 0 \\
+    0 & 0 & 4
+\end{bmatrix} - 
+\begin{bmatrix}
+    0 & -2 & 1 \\ 
+    -1 & 0 & -1 \\
+    -2 & 1 & 0
+\end{bmatrix}
+$$
+
+> 3. \(S\mathbf{x}_{1} = T\mathbf{x}_{0} + b\)을 풀어 \(\mathbf{x}_{1}\)을 얻는다.
+
+$$
+\begin{bmatrix}
+    4x_1 & 0 & 0 \\ 
+    0 & 4y_1 & 0 \\
+    0 & 0 & 4z_1
+\end{bmatrix} =
+\begin{bmatrix}
+    5 \\ 
+    12 \\
+    12
+\end{bmatrix}
+$$
+
+$$
+\therefore \mathbf{x}_{1} = \begin{bmatrix}
+    \frac{5}{4} \\ 
+    3 \\
+    3
+\end{bmatrix}
+$$
+
+> 4. \(S\mathbf{x}_{2} = T\mathbf{x}_{1} + b\)을 풀어 \(\mathbf{x}_{2}\)를 얻는다.
+
+$$
+\begin{bmatrix}
+    4x_2 & 0 & 0 \\ 
+    0 & 4y_2 & 0 \\
+    0 & 0 & 4z_2
+\end{bmatrix} =
+\begin{bmatrix}
+    2 \\ 
+    \frac{31}{4} \\
+    \frac{25}{2}
+\end{bmatrix}
+$$
+
+$$
+\therefore \mathbf{x}_{2} = \begin{bmatrix}
+    \frac{1}{2} \\ 
+    \frac{31}{16} \\
+    \frac{25}{8}
+\end{bmatrix}
+$$
+
+> 5. \(\mathbf{x}_{k + 1} - \mathbf{x}_{k}\) 또는 \(b - A\mathbf{x}_{k}\)가 \(0\)에 충분히 가까워질 때까지 반복한다.
+
+$$
+k \rightarrow \infty \Rightarrow \mathbf{x}_{k} = \mathbf{x}
+$$
+
+위 과정과 같이, \(A\)의 주대각 성분으로 만든 대각 행렬 \(D\)를 \(A\)의 전처리 행렬 \(S\)로 사용하는 방법을 야코비 방법 (Jacobi's method)이라고 한다.
 
 ### 가우스–자이델 방법
 
+가우스–자이델 방법 (Gauss–Seidel method)에서는 \(A\)의 주대각선을 포함한 하삼각행렬 \(L\)을 \(A\)의 전처리 행렬 \(S\)로 사용한다.
+
+$$
+A = S - T
+$$
+
+$$
+= \begin{bmatrix}
+    4 & 0 & 0 \\ 
+    1 & 4 & 0 \\
+    2 & -1 & 4
+\end{bmatrix} - 
+\begin{bmatrix}
+    0 & -2 & 1 \\ 
+    0 & 0 & -1 \\
+    0 & 0 & 0
+\end{bmatrix}
+$$
+
 (추가 예정)
+
+---
 
 ### 공액 경사법
 
