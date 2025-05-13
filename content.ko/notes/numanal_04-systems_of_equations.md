@@ -324,7 +324,23 @@ $$
 
 ### 반복법의 수렴 조건
 
-(추가 예정)
+\(\mathbf{x}_k\)가 정확한 해 \(\mathbf{x}\)에 수렴하기 위해서는 \(k\)의 값이 얼마나 커져야 할까? \(\mathbf{x}_k\)가 \(\mathbf{x}\)에 수렴한다는 것은 \(\mathbf{x}\)와 \(\mathbf{x}_k\) 사이의 오차 (error) \(\mathbf{e}_k = \mathbf{x} - \mathbf{x}_k\)가 \(0\)에 가까워진다는 것을 뜻한다.
+
+\(S\mathbf{x}_{k + 1} = T\mathbf{x}_k + b\)에서 \(S\mathbf{x} = T\mathbf{x} + b\)를 빼면
+
+$$
+S(\mathbf{x}_{k + 1} - \mathbf{x}) = T(\mathbf{x}_{k} - \mathbf{x})
+$$
+
+따라서 \(k\)의 값이 커질수록 오차가 얼마나 증가하는지를 나타내는 오차 방정식 (error equation)을 구할 수 있다.
+
+$$
+\therefore \mathbf{e}_{k + 1} = S^{-1}T \ \mathbf{e}_k
+$$
+
+오차 방정식에서 알 수 있는 중요한 사실은 오차가 \(B = S^{-1}T\)의 \(k\)제곱, 즉 \(B^k\)라는 것이다. 그런데 \(B\)의 고유벡터 행렬 \(X\)와 고유값 행렬 \(\Lambda\)에 대해 \(B^k = X{\Lambda}^k {X}^{-1}\)이므로, \(B\)의 모든 고유값의 절댓값이 \(1\)보다 작으면 \(B^k\)가 점점 \(0\)에 가까워지게 된다.
+
+> **스펙트럼 반지름 (spectral radius):** \(B = S^{-1}T\)의 고유값 \(\lambda_1, \cdots\)의 절댓값 중에서 가장 큰 값 \(\rho = \max{|\lambda|}\)을 \(B\)의 스펙트럼 반지름이라고 하며, \(\rho < 1\)이라면 \(k \rightarrow \infty\)일 때 \(\mathbf{e}_k \rightarrow 0\)이다.
 
 ---
 
