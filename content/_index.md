@@ -21,29 +21,32 @@ I hope you enjoy the posts on my blog and any feedback is always appreciated!
 
 ---
 
-- Game Physics
 - Computer Graphics
+- System(s) Programming
 - UNIX(-like) Operating Systems
 
 ### Education
 
 ---
 
-**Chungnam National University** *(Feb 2023 – Present)*  
-Bachelor's Degree, Division of Computer Convergence
+**Chungnam National University** *(Mar. 2023 – Present)*  
+Bachelor Student, Division of Computer Convergence
 
-**Soonchunhyang University** *(Feb 2019 – Feb 2023)*  
-Bachelor's Degree, Computer Software Engineering
+**Soonchunhyang University** *(Mar. 2019 – Feb. 2023)*  
+Bachelor Student[^1], Computer Software Engineering
 
 ### Experience
 
 ---
 
-**DGIST (Daegu Gyeongbuk Institute of Science and Technology)** *(Jun 2024 – Jul 2024)*  
-Research Intern @ [DGIST DataLab](https://datalab.dgist.ac.kr)
+**DGIST (Daegu Gyeongbuk Institute of Science and Technology)** *(Jun. 2024 – Jul. 2024)*  
+Research Intern, [DGIST DataLab](https://datalab.dgist.ac.kr)
 
-**RTst** *(Jan 2024 – Feb 2024)*  
-Student Intern @ [Linux Team](https://www.rtst.co.kr/about)
+**RTst** *(Jan. 2024 – Feb. 2024)*  
+Student Intern, [Linux Team](https://www.rtst.co.kr/about)
+
+**Republic of Korea Air Force** *(Apr. 2020 – Jan. 2022)*  
+Staff Sergeant, Republic of Korea Air Force Logistics Command
 
 ### Projects
 
@@ -59,8 +62,13 @@ Student Intern @ [Linux Team](https://www.rtst.co.kr/about)
 
 ---
 
-- Excellence Award, 2024 SW Talent Festival, Ministry of Science and ICT, 2024
+- Excellence Award[^2], 2024 SW Talent Festival, Ministry of Science and ICT, 2024
 - Excellence Award, 2024-2 CNU SW/AI Project Fair, Chungnam National University, 2024
 - Excellence Award, 2024 CNU Engineering Fair (Capstone Design Competition), Chungnam National University, 2024
-- Grand Award, 2024-1 CNU SW/AI Project Fair, Chungnam National University, 2024
-- ROKAF Chief of Staff Award, 2021 Military Open Source Software Hackathon, Open Source Academy for Military, 2021
+- Grand Award[^3], 2024-1 CNU SW/AI Project Fair, Chungnam National University, 2024
+- ROKAF Chief of Staff Award[^4], 2021 Military Open Source Software Hackathon, Open Source Academy for Military, 2021
+
+[^1]: Completed the second year in a Bachelor's degree, then transferred to Chungnam National University.
+[^2]: Won 3rd place out of 58 university teams nationwide in the Republic of Korea.
+[^3]: Awarded 1st place among 40 teams in a competition at my university.
+[^4]: Secured 4th place among 52 teams from the Republic of Korea Army, Navy, and Air Force.

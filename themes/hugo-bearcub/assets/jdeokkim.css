@@ -246,4 +246,13 @@ figcaption > p {
   font-style: italic;
 }
 
+.footnotes {
+  font-size: 0.85em;
+}
+
+.footnotes li {
+  font-size: 0.85em;
+  line-height: 0.85;
+}
+
 /* ========================================================================> */
