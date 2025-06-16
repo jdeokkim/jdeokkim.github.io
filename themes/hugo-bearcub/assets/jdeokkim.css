@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2024 Jaedeok Kim <jdeokkim@protonmail.com>
+  Copyright (c) 2024-2025 Jaedeok Kim <jdeokkim@protonmail.com>
 
   Permission is hereby granted, free of charge, to any person obtaining a 
   copy of this software and associated documentation files (the "Software"),
@@ -253,6 +253,19 @@ figcaption > p {
 .footnotes li {
   font-size: 0.85em;
   line-height: 0.85;
+}
+
+a.footnote-ref {
+  font-size: 0.75em;
+  color: var(--color-primary);
+}
+
+a.footnote-ref::before {
+  content: '[';
+}
+
+a.footnote-ref::after {
+  content: ']';
 }
 
 /* ========================================================================> */
