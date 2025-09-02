@@ -40,10 +40,10 @@ Bachelor Student[^1], Computer Software Engineering
 ---
 
 **DGIST (Daegu Gyeongbuk Institute of Science and Technology)** *(Jun. 2024 – Jul. 2024)*  
-Research Intern, [DGIST DataLab](https://datalab.dgist.ac.kr)
+Research Intern, [DGIST DataLab](https://web.archive.org/web/20250819171632/https://datalab.dgist.ac.kr/)
 
 **RTst** *(Jan. 2024 – Feb. 2024)*  
-Student Intern, [Linux Team](https://www.rtst.co.kr/about)
+Student Intern, [Linux Team](https://www.rtst.co.kr/company/about.php)
 
 **Republic of Korea Air Force** *(Apr. 2020 – Jan. 2022)*  
 Staff Sergeant, Republic of Korea Air Force Logistics Command
