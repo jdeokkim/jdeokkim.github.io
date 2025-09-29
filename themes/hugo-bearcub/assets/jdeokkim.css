@@ -109,7 +109,7 @@ h4 {
 }
 
 h1 {
-  font-size: calc(var(--size) * 4.2);
+  font-size: calc(var(--size) * 4.0);
 }
 
 h2 {
