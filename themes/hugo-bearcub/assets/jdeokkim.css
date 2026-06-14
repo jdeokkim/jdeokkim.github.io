@@ -34,8 +34,8 @@
 
 @font-face {
   font-family: "DungGeunMo";
-  src: url("/fonts/DungGeunMo.woff2") format('woff2'),
-       url("/fonts/DungGeunMo.woff") format('woff');
+  src: url("/fonts/DungGeunMo-Lt.woff2") format('woff2'),
+       url("/fonts/DungGeunMo-Lt.woff") format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
