@@ -20,6 +20,8 @@
   DEALINGS IN THE SOFTWARE.
 */
 
+/* ========================================================================> */
+
 @import url(
   "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
 );
@@ -30,11 +32,22 @@
 
 /* ========================================================================> */
 
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("/fonts/DungGeunMo.woff2") format('woff2'),
+       url("/fonts/DungGeunMo.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================================> */
+
 :root {
   font-size: 62.5%;
-  --color-dark: #181a1d;
+  --color-dark: #252726;
   --color-light: #fafafa;
-  --color-primary: #346cac;
+  --color-primary: #478061;
   --size: 1rem;
   --spacing: calc(var(--size) * 2.4);
 }
@@ -45,7 +58,7 @@ body {
   padding: 4rem;
   font-family: Pretendard, sans-serif, 
     "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+    "Segoe UI Symbol";
   font-size: calc(var(--size) * 1.85);
   line-height: 1.5;
   min-height: 80vh;
@@ -57,7 +70,7 @@ body {
 header,
 main,
 footer {
-  max-width: 70ch;
+  max-width: 78ch;
   margin-inline: auto;
 }
 
@@ -85,12 +98,12 @@ footer {
 a {
   color: currentColor;
   text-decoration-color: var(--color-primary);
-  text-decoration-thickness: 0.2ex;
-  text-underline-offset: 0.45ex;
+  text-decoration-thickness: 0.25ex;
+  text-underline-offset: 0.55ex;
 }
 
 a:hover {
-  text-decoration-thickness: 0.4ex;
+  text-decoration-thickness: 0.38ex;
 }
 
 img {
@@ -157,8 +170,9 @@ blockquote {
 }
 
 .title h1 {
-  font-size: calc(var(--size) * 3.4);
-  margin-top: calc(var(--spacing) / 2);
+  font-family: "DungGeunMo";
+  font-size: round(up, calc(var(--size) * 3), 16px);
+  margin-top: calc(var(--spacing) * 0.35);
 }
 
 ul.blog-posts {
